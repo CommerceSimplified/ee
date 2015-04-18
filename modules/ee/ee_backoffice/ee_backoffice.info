@@ -1,0 +1,11 @@
+name = Backoffice
+description = Admin and Backoffice modules.
+core = 7.x
+package = Enterprise for Everyone
+
+dependencies[] = admin_menu
+dependencies[] = module_filter
+dependencies[] = commerce_backoffice
+dependencies[] = commerce_backoffice_content
+dependencies[] = commerce_backoffice_order
+dependencies[] = commerce_backoffice_product

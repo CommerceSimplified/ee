@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * Implements hook_commerce_product_info().
+ */
+function ee_commerce_file_commerce_product_type_info() {
+  $product_types = array();
+
+  $product_types['ee_commerce_file'] = array(
+    'type' => 'ee_commerce_file',
+    'name' => t('File'),
+    'description' => t('A license product for selling subscriptions to access content.'),
+  );
+
+  return $product_types;
+}
+
+/**
+ * Implements hook_commerce_line_item_type_info().
+ */
+function ee_commerce_file_commerce_line_item_type_info() {
+  $line_item_types = array();
+
+  $line_item_types['ee_commerce_file'] = array(
+    'type' => 'ee_commerce_file',
+    'name' => t('File'),
+    'description' => t('A file for download'),
+    'product' => TRUE,
+    'add_form_submit_value' => t('Add File'),
+    'base' => 'commerce_product_line_item',
+  );
+
+  return $line_item_types;
+}

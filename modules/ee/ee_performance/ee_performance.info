@@ -1,0 +1,9 @@
+name = Performance
+description = Cache and Performance modules.
+core = 7.x
+package = Enterprise for Everyone
+
+dependencies[] = authcache
+dependencies[] = commerce_authcache
+dependencies[] = commerce_entitycache
+dependencies[] = entitycache

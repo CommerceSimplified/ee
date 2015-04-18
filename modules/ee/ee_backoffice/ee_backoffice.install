@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function ee_backoffice_install() {
+  // Enable the admin theme.
+  $admin_theme = 'shiny';
+  theme_enable(array($admin_theme));
+  variable_set('admin_theme', $admin_theme);
+  variable_set('node_admin_theme', '1');
+
+  module_disable(array('toolbar'));
+}

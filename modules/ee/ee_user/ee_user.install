@@ -1,0 +1,16 @@
+<?php
+/**
+ *
+ */
+
+/**
+ * Implements hook_install().
+ */
+function ee_user_install() {
+  // Create a default store manager role.
+  $role = new stdClass();
+  $role->name = 'store manager';
+  $role->machine_name = 'store_manager';
+  $role->weight = 2;
+  user_role_save($role);
+}

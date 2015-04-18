@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ *   ee_panels.install
+ */
+
+/**
+ * Implements hook_install().
+ */
+function ee_panels_install() {
+  variable_set('ctools_content_all_views', FALSE);
+}
