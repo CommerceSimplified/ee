@@ -5,7 +5,4 @@ package = Enterprise for Everyone
 
 dependencies[] = admin_menu
 dependencies[] = module_filter
-dependencies[] = commerce_backoffice
-dependencies[] = commerce_backoffice_content
-dependencies[] = commerce_backoffice_order
-dependencies[] = commerce_backoffice_product
+

@@ -39,10 +39,6 @@ projects[rules][version] = 2.7
 
 includes[ee_backoffice] = modules/ee/ee_backoffice/ee_backoffice.make
 includes[ee_performance] = modules/ee/ee_performance/ee_performance.make
-includes[ee_commerce] = modules/ee/ee_commerce/ee_commerce.make
-includes[ee_commerce_file] = modules/ee/ee_commerce_file/ee_commerce_file.make
-includes[ee_license] = modules/ee/ee_license/ee_license.make
-includes[ee_license_role] = modules/ee/ee_license_role/ee_license_role.make
 includes[ee_panels] = modules/ee/ee_panels/ee_panels.make
 includes[ee_seo] = modules/ee/ee_seo/ee_seo.make
 includes[ee_user] = modules/ee/ee_user/ee_user.make
