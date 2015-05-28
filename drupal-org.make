@@ -6,7 +6,7 @@ defaults[projects][subdir] = contrib
 ; Core Drupal Improvements
 
 projects[advancedqueue] = 1.0-beta3
-projects[ctools][version] = 1.6
+projects[ctools][version] = 1.7
 projects[countries][type] = module
 projects[countries][download][type] = git
 projects[countries][download][revision] = 206d25fdd8893a72071a0816d32f651fc6135a6b
@@ -35,7 +35,7 @@ projects[link][version] = 1.3
 
 ; Views
 
-projects[views][version] = 3.10
+projects[views][version] = 3.11
 projects[views_bulk_operations][version] = 3.2
 projects[views_megarow][version] = 1.4
 
