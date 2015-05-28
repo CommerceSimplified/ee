@@ -7,7 +7,13 @@ defaults[projects][subdir] = contrib
 
 projects[advancedqueue] = 1.0-beta3
 projects[ctools][version] = 1.6
+projects[countries][type] = module
+projects[countries][download][type] = git
+projects[countries][download][revision] = 206d25fdd8893a72071a0816d32f651fc6135a6b
 projects[jquery_update][version] = 2.5
+projects[libraries][version] = 2.2
+projects[mailsystem][version] = 2.34
+projects[mailsystem][patch][] = http://www.drupal.org/files/issues/mailsystem-use-caching-for-mailsystem_get_classes-1905544-13.patch
 projects[token][version] = 1.5
 projects[role_export][version] = 1.0
 
@@ -21,8 +27,10 @@ projects[countries][version] = 2.3
 ; Fields
 
 projects[date][version] = 2.8
+projects[email][version] = 1.3
 projects[entityreference][version] = 1.1
 projects[field_group][version] = 1.4
+projects[inline_entity_form][version] = 1.5
 projects[link][version] = 1.3
 
 ; Views
