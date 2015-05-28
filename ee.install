@@ -13,7 +13,10 @@
  */
 function ee_install() {
   // Create a default role for site administrators, with all available permissions assigned.
-  $admin_role = new stdClass();
+  $admin_role = user_role_load_by_name('administrator');
+  if (!$admin_role) {
+    $admin_role = new stdClass();
+  }
   $admin_role->name = 'administrator';
   $admin_role->machine_name = 'administrator';
   $admin_role->weight = 10;
