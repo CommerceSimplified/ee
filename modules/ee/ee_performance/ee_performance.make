@@ -4,7 +4,7 @@ core = 7.x
 defaults[projects][subdir] = contrib
 
 projects[advagg][version] = 2.7
-projects[authcache][version] = 2.0-beta4
+projects[authcache][version] = 2.0-beta5
 projects[entitycache][version] = 1.2
 projects[expire][version] = 2.0-rc4
 projects[expire_panels][version] = 1.0-beta1
