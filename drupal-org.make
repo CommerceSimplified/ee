@@ -39,6 +39,7 @@ projects[link][version] = 1.3
 projects[views][version] = 3.11
 projects[views_bulk_operations][version] = 3.2
 projects[views_megarow][version] = 1.4
+projects[views_simple_pager][version] = 1.0-alpha2
 
 ; Rules
 
