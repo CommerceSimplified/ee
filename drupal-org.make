@@ -36,6 +36,7 @@ projects[entityreference][version] = 1.1
 projects[field_group][version] = 1.4
 projects[inline_entity_form][version] = 1.5
 projects[link][version] = 1.3
+projects[title][version] = 1.0-alpha7
 
 ; Views
 
