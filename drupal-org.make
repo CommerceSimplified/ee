@@ -35,6 +35,8 @@ projects[addressfield][version] = 1.1
 projects[date][version] = 2.8
 projects[email][version] = 1.3
 projects[entityreference][version] = 1.1
+projects[field_formatter_settings][version] = 1.1
+projects[field_formatter_class][version] = 1.1
 projects[field_group][version] = 1.4
 projects[inline_entity_form][version] = 1.5
 projects[link][version] = 1.3
@@ -55,6 +57,7 @@ projects[rules][version] = 2.7
 ; Sub Modules
 
 includes[ee_backoffice] = modules/ee/ee_backoffice/ee_backoffice.make
+includes[ee_media] = modules/ee/ee_media/ee_media.make
 includes[ee_performance] = modules/ee/ee_performance/ee_performance.make
 includes[ee_panels] = modules/ee/ee_panels/ee_panels.make
 includes[ee_seo] = modules/ee/ee_seo/ee_seo.make
