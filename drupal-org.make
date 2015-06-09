@@ -23,6 +23,7 @@ projects[role_export][version] = 1.0
 
 ; Entity
 
+projects[auto_entitylabel][version] = 1.3
 projects[entity][version] = 1.6
 projects[entity_view_mode][version] = 1.0-rc1
 projects[file_entity][version] = 2.0-beta1
@@ -41,6 +42,7 @@ projects[title][version] = 1.0-alpha7
 ; Views
 
 projects[views][version] = 3.11
+projects[draggableviews][version] = 2.1
 projects[views_bulk_operations][version] = 3.2
 projects[views_megarow][version] = 1.4
 projects[views_simple_pager][version] = 1.0-alpha2
