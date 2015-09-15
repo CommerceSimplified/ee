@@ -13,6 +13,7 @@ projects[countries][download][revision] = 206d25fdd8893a72071a0816d32f651fc6135a
 projects[fences][type] = module
 projects[fences][download][type] = git
 projects[fences][download][revision] = 8d85fa9bed6e6729cdd9a38e156047462462a69c
+projects[flood_control][version] = 1.0
 projects[jquery_update][version] = 2.6
 projects[libraries][version] = 2.2
 projects[mailsystem][version] = 2.34
