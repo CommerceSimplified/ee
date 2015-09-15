@@ -19,6 +19,7 @@ projects[mailsystem][version] = 2.34
 projects[mailsystem][patch][] = http://www.drupal.org/files/issues/mailsystem-use-caching-for-mailsystem_get_classes-1905544-13.patch
 projects[mimemail][version] = 1.0-beta3
 projects[token][version] = 1.5
+projects[username_enumeration_prevention][version] = 1.1
 projects[role_export][version] = 1.0
 
 ; Entity

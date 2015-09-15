@@ -29,6 +29,7 @@ dependencies[] = entity_token
 dependencies[] = role_export
 dependencies[] = rules
 dependencies[] = token
+dependencies[] = username_enumeration_prevention
 dependencies[] = views
 
 files[] = ee.profile
