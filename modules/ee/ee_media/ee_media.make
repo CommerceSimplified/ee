@@ -11,7 +11,7 @@ projects[filefield_paths][download][revision] = 8b39e7369bdc8790d4075a1a0e7544fb
 
 ; Media
 
-projects[media][version] = 2.0-alpha4
+projects[media][version] = 2.0-beta1
 projects[media_youtube][version] = 3.0
 projects[media_yt_id_formatter][version] = 1.0-alpha1
 projects[media_vimeo][version] = 2.1
