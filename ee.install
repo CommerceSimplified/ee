@@ -30,3 +30,12 @@ function ee_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
 }
+
+/**
+ * Implements hook_install_tasks().
+ */
+function ee_install_tasks() {
+  $tasks = array();
+
+  return $tasks;
+}
