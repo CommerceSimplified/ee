@@ -60,6 +60,7 @@ projects[rules][version] = 2.9
 ; Sub Modules
 
 includes[ee_backoffice] = modules/ee/ee_backoffice/ee_backoffice.make
+includes[ee_media] = modules/ee/ee_media/ee_i18n.make
 includes[ee_media] = modules/ee/ee_media/ee_media.make
 includes[ee_performance] = modules/ee/ee_performance/ee_performance.make
 includes[ee_panels] = modules/ee/ee_panels/ee_panels.make
