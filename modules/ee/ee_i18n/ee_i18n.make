@@ -10,3 +10,5 @@ projects[i18n][version] = 1.13
 projects[i18nviews][type] = module
 projects[i18nviews][download][type] = git
 projects[i18nviews][download][revision] = fdc8c33f91d4e8161cec5a857da4eec95bf8843e
+
+projects[l10n_update][version] = 2.0
