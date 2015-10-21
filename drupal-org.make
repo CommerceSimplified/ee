@@ -23,6 +23,7 @@ projects[token][version] = 1.6
 projects[username_enumeration_prevention][version] = 1.1
 projects[username_enumeration_prevention][patch][] = http://drupal.org/files/issues/username-2483015-2.patch
 projects[role_export][version] = 1.0
+projects[variable][version] = 2.5
 
 ; Entity
 
