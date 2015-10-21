@@ -12,4 +12,5 @@ projects[metatag][version] = 1.7
 projects[transliteration][version] = 3.2
 projects[transliteration][version] = 3.2
 projects[pathauto][version] = 1.2
+projects[subpathauto[version] = 1.3
 projects[redirect][version] = 1.0-rc1

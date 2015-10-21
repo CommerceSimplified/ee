@@ -29,13 +29,13 @@ projects[role_export][version] = 1.0
 projects[auto_entitylabel][version] = 1.3
 projects[entity][version] = 1.6
 projects[entity_view_mode][version] = 1.0-rc1
-projects[file_entity][version] = 2.0-beta1
+projects[file_entity][version] = 2.0-beta2
 projects[countries][version] = 2.3
 
 ; Fields
 
 projects[addressfield][version] = 1.1
-projects[date][version] = 2.8
+projects[date][version] = 2.9
 projects[email][version] = 1.3
 projects[entityreference][version] = 1.1
 projects[field_formatter_settings][version] = 1.1
@@ -55,7 +55,7 @@ projects[views_simple_pager][version] = 1.0-alpha2
 
 ; Rules
 
-projects[rules][version] = 2.7
+projects[rules][version] = 2.9
 
 ; Sub Modules
 
