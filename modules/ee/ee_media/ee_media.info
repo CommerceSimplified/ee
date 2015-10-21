@@ -1,0 +1,9 @@
+name = Media
+description = Media moduels and helpers.
+core = 7.x
+package = Enterprise for Everyone
+
+dependencies[] = media
+dependencies[] = filefield_paths
+dependencies[] = image_class
+dependencies[] = imagecrop
