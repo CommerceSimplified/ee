@@ -5,9 +5,7 @@ defaults[projects][subdir] = contrib
 
 ; File
 
-projects[filefield_paths][type] = module
-projects[filefield_paths][download][type] = git
-projects[filefield_paths][download][revision] = 8b39e7369bdc8790d4075a1a0e7544fb60111eea
+projects[filefield_paths][version] = 1.0-rc1
 
 ; Media
 

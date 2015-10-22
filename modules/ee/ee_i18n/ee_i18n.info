@@ -6,3 +6,4 @@ package = Enterprise for Everyone
 dependencies[] = entity_translation
 dependencies[] = i18n
 dependencies[] = i18nviews
+dependencies[] = l10n_update
