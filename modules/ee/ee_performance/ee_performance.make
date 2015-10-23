@@ -8,6 +8,7 @@ projects[authcache][version] = 2.0-beta7
 projects[entitycache][version] = 1.2
 projects[expire][version] = 2.0-rc4
 projects[expire_panels][version] = 1.0-beta1
+projects[fast_404] = 1.5
 projects[memcache][version] = 1.2
 projects[redis][type] = module
 projects[redis][download][type] = git
