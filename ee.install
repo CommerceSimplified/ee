@@ -29,6 +29,9 @@ function ee_install() {
   db_insert('users_roles')
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
+
+  // Set the default JPEG image quality.
+  variable_set('image_jpeg_quality', '95');
 }
 
 /**
