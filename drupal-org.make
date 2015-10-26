@@ -38,6 +38,9 @@ projects[auto_entitylabel][version] = 1.3
 projects[entity][version] = 1.6
 projects[entity_view_mode][version] = 1.0-rc1
 projects[file_entity][version] = 2.0-beta2
+projects[file_entity_link][type] = module
+projects[file_entity_link][download][type] = git
+projects[file_entity_link][download][revision] = 1df074400175fe83786e40725e1f6e5bbfc40fb3
 projects[countries][version] = 2.3
 
 ; Fields
@@ -72,6 +75,7 @@ includes[ee_i18n] = modules/ee/ee_i18n/ee_i18n.make
 includes[ee_media] = modules/ee/ee_media/ee_media.make
 includes[ee_performance] = modules/ee/ee_performance/ee_performance.make
 includes[ee_panels] = modules/ee/ee_panels/ee_panels.make
+includes[ee_search] = modules/ee/ee_search/ee_search.make
 includes[ee_seo] = modules/ee/ee_seo/ee_seo.make
 includes[ee_user] = modules/ee/ee_user/ee_user.make
 includes[ee_wysiwyg] = modules/ee/ee_wysiwyg/ee_wysiwyg.make
