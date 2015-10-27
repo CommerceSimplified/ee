@@ -25,3 +25,4 @@ projects[imagecrop][patch][] = https://www.drupal.org/files/issues/upgrade_jcrop
 projects[imagecrop][patch][] = https://www.drupal.org/files/issues/imagecrop-media_v2_support-2196011-24.patch
 projects[image_class][version] = 1.0
 projects[image_class][patch][] = http://www.drupal.org/files/issues/image_class.module.patch
+projects[picture][version] = 2.13

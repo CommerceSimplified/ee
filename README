@@ -2,3 +2,43 @@ Enterprise for Everyone
 -----------------------
 
 Quickly build enterprise Drupal applications.
+
+
+Settings for Platform
+---------------------
+
+Add to the
+# Additional extensions
+runtime:
+    extensions:
+        - redis
+
+Use these settings on master
+
+drupal:cache_backends:
+[
+   "profiles/ee/modules/contrib/redis/redis.autoload.inc"
+   "profiles/ee/modules/contrib/authcache/authcache.cache.inc",
+   "profiles/ee/modules/contrib/authcache/modules/authcache_builtin/authcache_builtin.cache.inc"
+]
+
+drupal:redis_client_host
+  redis.internal
+
+drupal:redis_client_interface
+  PhpRedis
+
+drupal:cache_default_class
+  Redis_Cache
+
+drupal:cache_class_cache_form
+  DrupalDatabaseCache
+
+drupal:lock_inc
+  profiles/ee/modules/contrib/redis/redis.lock.inc
+
+drupal:path_inc
+  profiles/ee/modules/contrib/redis/redis.path.inc
+
+drupal:page_compression
+  1
