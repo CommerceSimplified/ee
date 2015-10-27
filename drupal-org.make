@@ -5,7 +5,8 @@ defaults[projects][subdir] = contrib
 
 ; Core Drupal Improvements
 
-projects[advancedqueue] = 1.0-beta3
+projects[advancedqueue][version] = 1.0-beta3
+projects[breakpoints][version] = 1.3
 projects[ctools][version] = 1.9
 projects[countries][type] = module
 projects[countries][download][type] = git
