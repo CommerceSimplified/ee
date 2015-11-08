@@ -26,9 +26,11 @@ function ee_install() {
   variable_set('user_admin_role', $admin_role->rid);
 
   // Assign user 1 the "administrator" role.
-  db_insert('users_roles')
-    ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
-    ->execute();
+  if (!user_has_role($admin_role->rid, 1)) {
+    db_insert('users_roles')
+      ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
+      ->execute();
+  }
 
   // Set the default JPEG image quality.
   variable_set('image_jpeg_quality', '95');
