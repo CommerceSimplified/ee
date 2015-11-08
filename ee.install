@@ -25,8 +25,9 @@ function ee_install() {
   // Set this as the administrator role.
   variable_set('user_admin_role', $admin_role->rid);
 
+  $admin_user = user_load(1);
   // Assign user 1 the "administrator" role.
-  if (!user_has_role($admin_role->rid, 1)) {
+  if (!user_has_role($admin_role->rid, $admin_user)) {
     db_insert('users_roles')
       ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
       ->execute();
