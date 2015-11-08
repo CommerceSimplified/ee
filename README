@@ -17,7 +17,7 @@ Use these settings on master
 
 drupal:cache_backends:
 [
-   "profiles/ee/modules/contrib/redis/redis.autoload.inc"
+   "profiles/ee/modules/contrib/redis/redis.autoload.inc",
    "profiles/ee/modules/contrib/authcache/authcache.cache.inc",
    "profiles/ee/modules/contrib/authcache/modules/authcache_builtin/authcache_builtin.cache.inc"
 ]
@@ -42,3 +42,9 @@ drupal:path_inc
 
 drupal:page_compression
   1
+
+drupal:authcache_builtin_cache_without_database
+  TRUE
+
+drupal:page_cache_maximum_age
+  600

@@ -60,6 +60,7 @@ projects[title][version] = 1.0-alpha7
 ; Views
 
 projects[views][version] = 3.11
+projects[views][patch][] = http://drupal.org/files/issues/views-view-cached-node-conditional-include-2067459-1_0.patch
 projects[draggableviews][version] = 2.1
 projects[views_bulk_operations][version] = 3.3
 projects[views_megarow][version] = 1.4

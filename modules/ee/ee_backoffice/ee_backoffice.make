@@ -11,3 +11,4 @@ projects[eva][version] = 1.2
 projects[views_bulk_operations][version] = 3.2
 projects[module_filter][version] = 2.0
 projects[shiny][version] = 1.7
+projects[shiny][type] = theme
