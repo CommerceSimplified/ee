@@ -108,10 +108,7 @@ function ee_wysiwyg_install() {
   // Create a basic profile
   $arr['toolbar'] = "
 [
-    ['Cut','Copy','Paste','PasteText','-','SpellChecker'],
-    ['Undo','Redo','Find','Replace','-','SelectAll'],
-    '/',
-    ['Bold','Italic','RemoveFormat'],
+    ['Bold','Italic','-','NumberedList','BulletedList','-','Link','Unlink','Image']
 ]
     ";
 
