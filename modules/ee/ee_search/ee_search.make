@@ -26,5 +26,5 @@ projects[search_api_et_solr][download][revision] = a03edb6352040e632d7049fa5805c
 ; Facet API
 projects[facetapi][version] = 1.5
 projects[facetapi][patch][] = http://drupal.org/files/facetapi-1616518-13-show-active-term.patch
-projects[ajax_facets][version] = 3.0
+projects[ajax_facets][version] = 3.4
 

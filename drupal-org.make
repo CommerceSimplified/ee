@@ -20,7 +20,7 @@ projects[libraries][version] = 2.2
 projects[mailsystem][version] = 2.34
 projects[mailsystem][patch][] = http://www.drupal.org/files/issues/mailsystem-use-caching-for-mailsystem_get_classes-1905544-13.patch
 projects[menu_attributes][version] = 1.0-rc3
-projects[mimemail][version] = 1.0-beta3
+projects[mimemail][version] = 1.0-beta4
 projects[title][type] = module
 projects[title][download][type] = git
 projects[title][download][revision] = d6f2000bbf54686faccc95e7b970d7a00db1dfd8
@@ -63,7 +63,7 @@ projects[views][version] = 3.13
 projects[views][patch][] = http://drupal.org/files/issues/views-view-cached-node-conditional-include-2067459-1_0.patch
 projects[draggableviews][version] = 2.1
 projects[views_bulk_operations][version] = 3.3
-projects[views_megarow][version] = 1.4
+projects[views_megarow][version] = 1.5
 projects[views_simple_pager][version] = 1.0-alpha2
 
 ; Rules
