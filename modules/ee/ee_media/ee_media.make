@@ -5,7 +5,7 @@ defaults[projects][subdir] = contrib
 
 ; File
 
-projects[filefield_paths][version] = 1.0-rc1
+projects[filefield_paths][version] = 1.0-rc2
 
 ; Media
 

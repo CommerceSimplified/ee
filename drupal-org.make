@@ -15,7 +15,7 @@ projects[fences][type] = module
 projects[fences][download][type] = git
 projects[fences][download][revision] = 8d85fa9bed6e6729cdd9a38e156047462462a69c
 projects[flood_control][version] = 1.0
-projects[jquery_update][version] = 2.6
+projects[jquery_update][version] = 2.7
 projects[libraries][version] = 2.2
 projects[mailsystem][version] = 2.34
 projects[mailsystem][patch][] = http://www.drupal.org/files/issues/mailsystem-use-caching-for-mailsystem_get_classes-1905544-13.patch
@@ -59,7 +59,7 @@ projects[title][version] = 1.0-alpha7
 
 ; Views
 
-projects[views][version] = 3.11
+projects[views][version] = 3.13
 projects[views][patch][] = http://drupal.org/files/issues/views-view-cached-node-conditional-include-2067459-1_0.patch
 projects[draggableviews][version] = 2.1
 projects[views_bulk_operations][version] = 3.3
