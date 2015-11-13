@@ -78,6 +78,7 @@ includes[ee_media] = modules/ee/ee_media/ee_media.make
 includes[ee_performance] = modules/ee/ee_performance/ee_performance.make
 includes[ee_panels] = modules/ee/ee_panels/ee_panels.make
 includes[ee_search] = modules/ee/ee_search/ee_search.make
+includes[ee_security] = modules/ee/ee_security/ee_security.make
 includes[ee_seo] = modules/ee/ee_seo/ee_seo.make
 includes[ee_user] = modules/ee/ee_user/ee_user.make
 includes[ee_wysiwyg] = modules/ee/ee_wysiwyg/ee_wysiwyg.make
