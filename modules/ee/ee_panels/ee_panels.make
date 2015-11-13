@@ -10,5 +10,4 @@ projects[media_pane][version] = 1.0
 projects[panels_breadcrumbs][version] = 2.2
 projects[panels_css_js][version] = 1.1
 projects[panels_css_js][patch][] = http://drupal.org/files/issues/panels_css_js-allowing_configuration_options-2228381-2.patch
-projects[panels_css_js][patch][] = http://drupal.org/files/issues/panels_css_js-allowing_configuration_options-2228381-3.patch
 projects[panels_extra_styles][version] = 1.1
