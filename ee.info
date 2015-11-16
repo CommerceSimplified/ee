@@ -24,6 +24,8 @@ dependencies[] = file
 ; Install Core Contrib modules.
 dependencies[] = ctools
 dependencies[] = date
+dependencies[] = mailsystem
+dependencies[] = mimemail
 dependencies[] = entity
 dependencies[] = entity_token
 dependencies[] = role_export
