@@ -5,7 +5,7 @@ defaults[projects][subdir] = contrib
 
 ; Search API
 projects[search_api][version] = 1.16
-projects[search_api_attachments][version] = 1.16
+projects[search_api_attachments][version] = 1.6
 projects[search_api_autocomplete][version] = 1.4
 projects[search_api_ranges][version] = 1.5
 projects[search_api_ranges][patch][] = http://drupal.org/files/issues/search_api_ranges-rewrite-data-alteration-callback-2001846-4.patch
