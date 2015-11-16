@@ -3,14 +3,14 @@ core = 7.x
 
 defaults[projects][subdir] = contrib
 
-projects[filefield_paths][version] = 1.x-dev
-projects[globalredirect][version] = 1.5
-projects[imagecache_token][version] = 1.0-rc1
-projects[metatag][version] = 1.7
-projects[transliteration][version] = 3.2
-projects[pathauto][version] = 1.3
-projects[site_verify][version] = 1.1
-projects[subpathauto[version] = 1.3
-projects[redirect][version] = 1.0-rc3
-projects[xmlsitemap][version] = 2.2
-projects[robotstxt][version] = 1.3
+;projects[filefield_paths][version] = 1.x-dev
+;projects[globalredirect][version] = 1.5
+;projects[imagecache_token][version] = 1.0-rc1
+;projects[metatag][version] = 1.7
+;projects[transliteration][version] = 3.2
+;projects[pathauto][version] = 1.3
+;projects[site_verify][version] = 1.1
+;projects[subpathauto[version] = 1.3
+;projects[redirect][version] = 1.0-rc3
+;projects[xmlsitemap][version] = 2.2
+;projects[robotstxt][version] = 1.3

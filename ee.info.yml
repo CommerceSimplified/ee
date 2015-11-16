@@ -1,0 +1,24 @@
+name: Enterprise for Everyone
+type: profile
+description: Drupal for Enterprise Applications.
+core: 8.x
+
+dependencies:
+  # Core modules.
+  - block
+  - contextual
+  - help
+  - image
+  - list
+  - menu
+  - number
+  - options
+  - path
+  - taxonomy
+  - toolbar
+  - dblog
+  - field_ui
+  - file
+
+  # Contrib modules.
+  - token
