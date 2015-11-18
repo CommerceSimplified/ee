@@ -73,6 +73,7 @@ projects[draggableviews][version] = 2.1
 projects[views_bulk_operations][version] = 3.3
 projects[views_megarow][version] = 1.5
 projects[views_simple_pager][version] = 1.0-alpha2
+projects[better_exposed_filters][version] = 3.2
 
 ; Rules
 
