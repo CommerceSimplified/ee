@@ -54,7 +54,7 @@ projects[uuid_entity_autocomplete][version] = 1.0-beta1
 
 ; Fields
 
-projects[addressfield][version] = 1.1
+projects[addressfield][version] = 1.2
 projects[date][version] = 2.9
 projects[email][version] = 1.3
 projects[entityreference][version] = 1.1

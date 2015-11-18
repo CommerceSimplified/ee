@@ -3,7 +3,7 @@ core = 7.x
 
 defaults[projects][subdir] = contrib
 
-projects[encrypt][version] = 2.0
+projects[encrypt][version] = 2.1
 projects[field_encrypt][type] = module
 projects[field_encrypt][download][type] = git
 projects[field_encrypt][download][revision] = 21cc05589368d3e8a29bf6c121727ed759ed68da
