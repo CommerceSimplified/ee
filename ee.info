@@ -18,7 +18,6 @@ dependencies[] = path
 dependencies[] = taxonomy
 dependencies[] = toolbar
 dependencies[] = dblog
-dependencies[] = field_ui
 dependencies[] = file
 
 ; Install Core Contrib modules.
