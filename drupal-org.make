@@ -44,6 +44,14 @@ projects[file_entity_link][download][type] = git
 projects[file_entity_link][download][revision] = 1df074400175fe83786e40725e1f6e5bbfc40fb3
 projects[countries][version] = 2.3
 
+; UUID
+
+projects[uuid][version] = 1.0-beta1
+projects[uuid_link][version] = 1.0-beta3
+projects[uuid_link][patch][2101455] = http://drupal.org/files/uuid_link_entity_translation-2101455-9.patch
+projects[uuid_link][patch][2484927] = http://drupal.org/files/issues/linkit_uuid-2484927.patch
+projects[uuid_entity_autocomplete][version] = 1.0-beta1
+
 ; Fields
 
 projects[addressfield][version] = 1.1
