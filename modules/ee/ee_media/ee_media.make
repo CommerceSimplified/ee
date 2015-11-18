@@ -20,11 +20,11 @@ projects[imagecache_actions][version] = 1.5
 projects[imagecrop][type] = module
 projects[imagecrop][download][type] = git
 projects[imagecrop][download][revision] = 98d1faaa2abfcb4f5502c01fee518c4a77e29378
-projects[imagecrop][patch][] = https://drupal.org/files/issues/crop_box_zero-7053160-30.patch
-projects[imagecrop][patch][] = https://www.drupal.org/files/issues/upgrade_jcrop_2250347_3.patch
-projects[imagecrop][patch][] = https://www.drupal.org/files/issues/imagecrop-media_v2_support-2196011-24.patch
+projects[imagecrop][patch][7053160] = https://drupal.org/files/issues/crop_box_zero-7053160-30.patch
+projects[imagecrop][patch][2250347] = https://www.drupal.org/files/issues/upgrade_jcrop_2250347_3.patch
+projects[imagecrop][patch][2196011] = https://www.drupal.org/files/issues/imagecrop-media_v2_support-2196011-24.patch
 projects[image_class][version] = 1.0
-projects[image_class][patch][] = http://www.drupal.org/files/issues/image_class.module.patch
+projects[image_class][patch][2246595] = http://www.drupal.org/files/issues/image_class.module.patch
 
 projects[picture][version] = 2.13
 projects[image_replace][type] = module
