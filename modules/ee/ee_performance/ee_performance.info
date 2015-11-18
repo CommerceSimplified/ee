@@ -11,4 +11,4 @@ dependencies[] = advagg_css_compress
 dependencies[] = advagg_js_compress
 dependencies[] = advagg_bundler
 
-dependencies[] = ulitimate_cron
+dependencies[] = ultimate_cron
