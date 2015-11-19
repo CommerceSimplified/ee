@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ *   ee_search.module
+ */
+
+/**
+ * Implements hook_default_search_api_server().
+ */
+function ee_search_default_search_api_server() {
+  $defaults['ee_search_platform_solr'] = entity_create('search_api_server', array(
+    'name' => 'Platform.sh Solr',
+    'machine_name' => 'ee_search_platform_solr',
+    'class' => 'search_api_solr_service',
+    'options' => array(
+      'host' => 'solr.internal',
+      'port' => '8080',
+    ),
+    'enabled' => TRUE,
+  ));
+  return $defaults;
+}
