@@ -14,3 +14,4 @@ projects[subpathauto[version] = 1.3
 projects[redirect][version] = 1.0-rc3
 projects[xmlsitemap][version] = 2.2
 projects[robotstxt][version] = 1.3
+projects[site_map][version] = 1.3
