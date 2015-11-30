@@ -4,6 +4,7 @@ core = 7.x
 package = Enterprise for Everyone
 
 dependencies[] = pathauto
+dependencies[] = subpathauto
 dependencies[] = metatag
 dependencies[] = imagecache_token
 dependencies[] = transliteration
