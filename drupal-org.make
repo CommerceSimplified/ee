@@ -20,6 +20,7 @@ projects[libraries][version] = 2.2
 projects[mailsystem][version] = 2.34
 projects[mailsystem][patch][1905544] = http://www.drupal.org/files/issues/mailsystem-use-caching-for-mailsystem_get_classes-1905544-13.patch
 projects[menu_attributes][version] = 1.0-rc3
+projects[menu_block][version] = 2.7
 projects[mimemail][version] = 1.0-beta4
 projects[title][type] = module
 projects[title][download][type] = git
