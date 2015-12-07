@@ -101,6 +101,13 @@ function ee_wysiwyg_install() {
   $full_html_format = (object) $full_html_format;
   filter_format_save($full_html_format);
 
+  // Enable default permissions for system roles.
+  $basic_html_permission = filter_permission_name($basic_html_format);
+  $filtered_html_permission = filter_permission_name($filtered_html_format);
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array($basic_html_permission));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array($filtered_html_permission));
+
+
   /** CKEditor Settings */
   // Disable Advanced format.
   db_query("DELETE FROM {ckeditor_input_format} WHERE name = :name", array(':name' => "Advanced"));

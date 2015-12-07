@@ -33,6 +33,10 @@ function ee_install() {
       ->execute();
   }
 
+  // Enable default permissions for system roles.
+  user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'access comments'));
+  user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, array('access content', 'access comments', 'post comments', 'skip comment approval'));
+
   // Set the default JPEG image quality.
   variable_set('image_jpeg_quality', '95');
 }
