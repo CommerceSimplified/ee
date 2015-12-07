@@ -17,3 +17,6 @@ projects[security_review][version] = 1.2
 projects[securepages][version] = 1.0-beta2
 projects[securepages][patch][2393245] = http://drupal.org/files/issues/securepages-fix_typo-issue_2393245-comment_1.patch
 projects[securepages][patch][1627326] = http://drupal.org/files/issues/securepages-no_active_batch_error-1627326-26.patch
+projects[securepages][patch][2347127] = http://drupal.org/files/issues/securepages-pathauto_issues-2347127-1.patch
+projects[securepages][patch][2029965] = http://drupal.org/files/issues/properly_handle_a_form-2029965-5.patch
+projects[securepages][patch][234207] = http://drupal.org/files/issues/securepages_redirect_alter-234207-3.patch
