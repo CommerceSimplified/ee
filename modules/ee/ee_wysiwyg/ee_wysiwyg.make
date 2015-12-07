@@ -8,3 +8,5 @@ projects[ckeditor][patch][2454933] = http://www.drupal.org/files/issues/Issue_24
 projects[linkit][version] = 3.4
 projects[linkit_views][version] = 2.0
 projects[linkit_panel_pages][version] = 2.0
+projects[pathologic][version] = 3.1
+projects[pathologic][patch][2628348] = http://drupal.org/files/issues/language_prefix_is_not_2628348_4.patch
