@@ -20,6 +20,7 @@ projects[html_title][download][type] = git
 projects[html_title][download][revision] = 2c95046155342827a886aa74c7750c35e460206d
 projects[html_title][patch][2361153] = http://drupal.org/files/issues/html_title-support-for-panel-titles-2361153-3-7.39_0.patch
 projects[html_title][patch][2568917] = http://drupal.org/files/issues/provide_config_page_link_in_modules_list-2568917-2.patch
+projects[html_title][patch][2596107] = http://drupal.org/files/issues/html_title_admin_descr.patch
 projects[jquery_update][version] = 2.7
 projects[libraries][version] = 2.2
 projects[mailsystem][version] = 2.34

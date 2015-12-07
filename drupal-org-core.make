@@ -10,3 +10,4 @@ projects[drupal][patch][1470656] = http://drupal.org/files/drupal-1470656-14.pat
 projects[drupal][patch][865536] = http://drupal.org/files/drupal-865536-204.patch
 projects[drupal][patch][1772316] = http://drupal.org/files/issues/drupal-7.x-allow_profile_change_sys_req-1772316-28.patch
 projects[drupal][patch][1275902] = http://drupal.org/files/1275902-15-entity_uri_callback-D7.patch
+projects[drupal][patch][471970] = http://drupal.org/files/issues/drupal7-471970-100-fix-simpletest-https-d7.patch
