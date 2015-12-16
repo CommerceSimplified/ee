@@ -12,6 +12,7 @@ projects[i18nviews][download][type] = git
 projects[i18nviews][download][revision] = fdc8c33f91d4e8161cec5a857da4eec95bf8843e
 
 projects[l10n_update][version] = 2.0
+projects[l10n_client][version] = 1.3
 projects[language_switcher][version] = 1.0-beta2
 
 projects[facetapi_i18n][version] = 1.0-beta2

@@ -4,6 +4,7 @@ core = 7.x
 package = Enterprise for Everyone
 
 dependencies[] = entity_translation
+dependencies[] = entity_translation_i18n_menu
 dependencies[] = i18n
 dependencies[] = i18nviews
 dependencies[] = l10n_update
