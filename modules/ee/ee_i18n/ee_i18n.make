@@ -14,5 +14,6 @@ projects[i18nviews][download][revision] = fdc8c33f91d4e8161cec5a857da4eec95bf884
 projects[l10n_update][version] = 2.0
 projects[l10n_client][version] = 1.3
 projects[language_switcher][version] = 1.0-beta2
+projects[languageicons][version] = 1.1
 
 projects[facetapi_i18n][version] = 1.0-beta2
