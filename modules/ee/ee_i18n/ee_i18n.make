@@ -22,3 +22,4 @@ projects[language_switcher][version] = 1.0-beta2
 projects[languageicons][version] = 1.1
 
 projects[facetapi_i18n][version] = 1.0-beta2
+projects[pathauto_i18n][version] = 1.4
