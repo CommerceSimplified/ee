@@ -7,6 +7,7 @@ projects[entity_translation][type] = module
 projects[entity_translation][version] = 1.x-dev
 projects[entity_translation][download][type] = git
 projects[entity_translation][download][revision] = 99f7b6ba722a943a5a95e411894608ca7230d5e7
+projects[entity_translation][patch][1452820] = https://www.drupal.org/files/issues/entity_translation-dont_list_untranslated_nodes-1452820-40.patch
 
 projects[i18n][version] = 1.13
 projects[i18nviews][type] = module
