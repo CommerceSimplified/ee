@@ -21,6 +21,7 @@ projects[language_hierarchy][download][type] = git
 projects[language_hierarchy][download][revision] = 446ff8621e4f3a3ba0c3a7a43db10f25664d8ed8
 projects[language_switcher][version] = 1.0-beta2
 projects[languageicons][version] = 1.1
+projects[lang_dropdown][version] = 2.5
 
 projects[facetapi_i18n][version] = 1.0-beta2
 projects[pathauto_i18n][version] = 1.4
