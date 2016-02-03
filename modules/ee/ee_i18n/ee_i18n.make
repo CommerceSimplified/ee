@@ -24,4 +24,5 @@ projects[languageicons][version] = 1.1
 projects[lang_dropdown][version] = 2.5
 
 projects[facetapi_i18n][version] = 1.0-beta2
+projects[hreflang][version] = 1.2
 projects[pathauto_i18n][version] = 1.4
