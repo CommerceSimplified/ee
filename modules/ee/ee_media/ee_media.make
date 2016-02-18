@@ -10,13 +10,14 @@ projects[filefield_paths][version] = 1.0
 ; Media
 
 projects[media][version] = 2.0-beta1
+projects[media_ckeditor][version] = 2.0-alpha1
 projects[media_youtube][version] = 3.0
 projects[media_yt_id_formatter][version] = 1.0-alpha1
 projects[media_vimeo][version] = 2.1
 
 ; Image
 
-projects[imagecache_actions][version] = 1.5
+projects[imagecache_actions][version] = 1.6
 projects[imagecrop][type] = module
 projects[imagecrop][download][type] = git
 projects[imagecrop][download][revision] = 98d1faaa2abfcb4f5502c01fee518c4a77e29378
@@ -30,4 +31,4 @@ projects[picture][version] = 2.13
 projects[image_replace][type] = module
 projects[image_replace][download][type] = git
 projects[image_replace][download][revision] = 8c6a6196a08ff8e4e451b1bb3aecf3cbaa311746
-projects[focal_point][version] = 1.0-beta4
+projects[focal_point][version] = 1.0-beta6

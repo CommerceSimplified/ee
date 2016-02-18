@@ -6,7 +6,7 @@ defaults[projects][subdir] = contrib
 ; Core Drupal Improvements
 
 projects[advancedqueue][version] = 1.0-beta3
-projects[breakpoints][version] = 1.3
+projects[breakpoints][version] = 1.4
 projects[ctools][version] = 1.9
 projects[countries][type] = module
 projects[countries][download][type] = git
@@ -25,7 +25,7 @@ projects[jquery_update][version] = 2.7
 projects[libraries][version] = 2.2
 projects[mailsystem][version] = 2.34
 projects[mailsystem][patch][1905544] = http://www.drupal.org/files/issues/mailsystem-use-caching-for-mailsystem_get_classes-1905544-13.patch
-projects[menu_attributes][version] = 1.0-rc3
+projects[menu_attributes][version] = 1.0
 projects[menu_block][version] = 2.7
 projects[mimemail][version] = 1.0-beta4
 projects[special_menu_items][version] = 2.0
@@ -38,8 +38,7 @@ projects[title][patch][2465021] = http://drupal.org/files/issues/title-link_inte
 projects[title][patch][2465141] = http://drupal.org/files/issues/title-user_entity_uri_options-2465141-1.patch
 projects[title][patch][2426105] = http://drupal.org/files/issues/title-entity-reference-link-to-original-entity-2426105-1.patch
 projects[token][version] = 1.6
-projects[username_enumeration_prevention][version] = 1.1
-projects[username_enumeration_prevention][patch][] = http://drupal.org/files/issues/username-2483015-2.patch
+projects[username_enumeration_prevention][version] = 1.2
 projects[role_export][version] = 1.0
 projects[variable][version] = 2.5
 
@@ -50,6 +49,7 @@ projects[entity][version] = 1.6
 projects[entity_view_mode][version] = 1.0-rc1
 projects[file_entity][version] = 2.0-beta2
 projects[file_entity_link][type] = module
+projects[file_entity_link][version] = 1.x-dev
 projects[file_entity_link][download][type] = git
 projects[file_entity_link][download][revision] = 1df074400175fe83786e40725e1f6e5bbfc40fb3
 projects[countries][version] = 2.3
@@ -70,9 +70,9 @@ projects[email][version] = 1.3
 projects[entityreference][version] = 1.1
 projects[field_formatter_settings][version] = 1.1
 projects[field_formatter_class][version] = 1.1
-projects[field_group][version] = 1.4
+projects[field_group][version] = 1.5
 projects[inline_entity_form][version] = 1.6
-projects[link][version] = 1.3
+projects[link][version] = 1.4
 projects[title][version] = 1.0-alpha7
 
 ; Views

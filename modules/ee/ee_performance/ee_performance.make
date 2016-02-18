@@ -3,7 +3,7 @@ core = 7.x
 
 defaults[projects][subdir] = contrib
 
-projects[advagg][version] = 2.16
+projects[advagg][version] = 2.17
 projects[authcache][version] = 2.0-beta7
 projects[entitycache][version] = 1.5
 projects[expire][version] = 2.0-rc4
