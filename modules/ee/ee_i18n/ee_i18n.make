@@ -11,12 +11,14 @@ projects[entity_translation][patch][1452820] = https://www.drupal.org/files/issu
 
 projects[i18n][version] = 1.13
 projects[i18nviews][type] = module
+projects[i18nviews][version] = 3.x-dev
 projects[i18nviews][download][type] = git
 projects[i18nviews][download][revision] = fdc8c33f91d4e8161cec5a857da4eec95bf8843e
 
 projects[l10n_update][version] = 2.0
 projects[l10n_client][version] = 1.3
 projects[language_hierarchy][type] = module
+projects[language_hierarchy][version] = 1.x-dev
 projects[language_hierarchy][download][type] = git
 projects[language_hierarchy][download][revision] = 446ff8621e4f3a3ba0c3a7a43db10f25664d8ed8
 projects[language_switcher][version] = 1.0-beta2

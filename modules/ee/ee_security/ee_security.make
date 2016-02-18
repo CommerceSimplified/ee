@@ -5,6 +5,7 @@ defaults[projects][subdir] = contrib
 
 projects[encrypt][version] = 2.3
 projects[field_encrypt][type] = module
+projects[field_encrypt][version] = 1.x-dev
 projects[field_encrypt][download][type] = git
 projects[field_encrypt][download][revision] = 21cc05589368d3e8a29bf6c121727ed759ed68da
 projects[field_encrypt][patch][2227969] = http://drupal.org/files/issues/field_encrypt-make_use_of_age-2227969-14.patch
