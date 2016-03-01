@@ -1,0 +1,107 @@
+language: php
+sudo: false
+
+php:
+  - 5.6
+
+mysql:
+  database: drupal
+  username: root
+  encoding: utf8
+
+env:
+  - UPGRADE=none
+
+# Cache Composer & Drush directories.
+cache:
+  directories:
+    - $HOME/.composer/cache
+    - $HOME/.drush/cache
+    - tests/behat/vendor
+
+install:
+  - "mysql -e 'create database drupal;'"
+
+  # Install latest Drush 7.
+  - travis_retry composer self-update && composer --version
+  - travis_retry composer global require "drush/drush:7.*"
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+  # Drupal.org verify tool
+  - drush dl -y drupalorg_drush-7.x-1.x-dev --destination=$HOME/.drush
+  - drush cc drush
+
+  # Build Behat dependencies
+  - cd ./tests/behat
+  - travis_retry composer install --prefer-dist --no-interaction
+  - cd ../../../
+
+  # Setting Behat environment
+  - BUILD_TOP=`dirname $TRAVIS_BUILD_DIR`
+  - BEHAT_PARAMS='{"extensions":{"Drupal\\DrupalExtension":{"drupal":{"drupal_root":"BUILD_TOP/drupal"}}}}'
+  - BEHAT_PARAMS=`echo $BEHAT_PARAMS | sed -e s#BUILD_TOP#$BUILD_TOP#`
+  - export BEHAT_PARAMS
+
+  # Build Codebase
+  - mkdir private_files
+  - mkdir profiles
+  - mv ee profiles/
+  - mkdir drupal
+  - mv profiles drupal/
+
+  # Build the current branch
+  - cd drupal
+  - drush make --yes profiles/ee/drupal-org-core.make --prepare-install
+  - drush make --yes profiles/ee/drupal-org.make --no-core --contrib-destination=profiles/commerce_kickstart
+  # Download Diff module for checking overridden features through Drush.
+  - drush dl diff
+  - cd ../
+
+  # Verify that all the .make files will work on Drupal.org.
+  - drush verify-makefile drupal/profiles/ee/drupal-org.make
+  - find drupal/profiles/ee/modules -name \*.make -print0 | xargs -0 -n1 drush verify-makefile
+
+  # Download an old version to test upgrading from.
+  - if [[ "$UPGRADE" != none ]]; then drush dl ee-$UPGRADE; fi
+
+  # Setup files
+  - chmod -R 777 drupal/sites/all
+
+  # Setup display for Selenium
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 5
+
+  # Get Selenium
+  - wget http://selenium-release.storage.googleapis.com/2.42/selenium-server-standalone-2.42.1.jar
+  - java -jar selenium-server-standalone-2.42.1.jar > /dev/null 2>&1 &
+  - nc -zvv localhost 4444; out=$?; while [[ $out -ne 0 ]]; do echo "Retry hit port 4444..."; nc -zvv localhost 4444; out=$?; sleep 5; done
+
+   # Disable sendmail
+  - echo sendmail_path=`which true` >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+
+  # Increase the MySQL connection timeout on the PHP end.
+  - echo "mysql.connect_timeout=3000" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - echo "default_socket_timeout=3000" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+
+  # Increase the MySQL server timetout and packet size.
+  - mysql -e "SET GLOBAL wait_timeout = 36000;"
+  - mysql -e "SET GLOBAL max_allowed_packet = 33554432;"
+
+  # Enable APC
+  - |
+    if [[ $TRAVIS_PHP_VERSION < "5.5" ]]; then
+      echo "extension=apc.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+      echo "apc.shm_size=256M" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+    fi
+before_script:
+
+  # Do the site install (either the current revision or old for the upgrade).
+  - if [[ "$UPGRADE" == none ]]; then cd drupal; else cd ee-$UPGRADE; fi
+
+
+  # Copy override module into sites/default/modules so it carries over when testing upgrades.
+  - if [[ "$TEST_FEATURES_OVERRIDES" == 1 ]]; then mkdir sites/default/modules && cp -r ../drupal/profiles/commerce_kickstart/tests/commerce_kickstart_overrides_test sites/default/modules/commerce_kickstart_overrides_test; fi
+
+  - drush si ee --db-url=mysql://root:@127.0.0.1/drupal --account-name=admin --account-pass=admin --site-mail=admin@example.com --yes
+  - drush pm-disable dblog --yes
