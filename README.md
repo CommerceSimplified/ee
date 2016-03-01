@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/commercelabsio/ee.svg?branch=7.x-1.x)](https://travis-ci.org/commercelabsio/ee)
+[![Build Status](https://travis-ci.org/commercelabsio/ee.svg?branch=7.x-1.x)](https://travis-ci.org/commercelabsio/ee) [![Codacy Badge](https://api.codacy.com/project/badge/grade/8bf3e5bb79dc48959719fa892afb293e)](https://www.codacy.com/app/dwkitchen/ee)
 
 Enterprise for Everyone
 -----------------------
