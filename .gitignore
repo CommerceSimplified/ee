@@ -1,4 +1,5 @@
 # Ignore the contrib modules
-modules/contrib/*
+modules/contrib
+themes/contrib
 libraries/*
 
