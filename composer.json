@@ -1,0 +1,34 @@
+{
+  "name": "drupal/ee",
+  "type": "drupal-profile",
+  "description": "Enterprise for Everyone",
+  "homepage": "http://drupal.org/project/ee",
+  "license": "GPL-2.0+",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packagist.drupal-composer.org"
+    }
+  ],
+  "require": {
+    "composer/installers": "^1.0.20",
+    "drupal/entity": "8.1.x-dev"
+  },
+  "require-dev": {
+    "behat/mink": "~1.6",
+    "behat/mink-goutte-driver": "~1.2",
+    "mikey179/vfsStream": "~1.2",
+    "phpunit/phpunit": "~4.8",
+    "symfony/css-selector": "2.7.*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "installer-paths": {
+      "modules/contrib/{$name}": ["type:drupal-module"],
+      "profiles/contrib/{$name}": ["type:drupal-profile"],
+      "themes/contrib/{$name}": ["type:drupal-theme"],
+      "drush/commands/{$name}": ["type:drupal-drush"]
+    }
+  }
+}
