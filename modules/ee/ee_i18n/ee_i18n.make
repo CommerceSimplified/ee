@@ -10,6 +10,7 @@ projects[entity_translation][download][revision] = 99f7b6ba722a943a5a95e41189460
 projects[entity_translation][patch][1452820] = https://www.drupal.org/files/issues/entity_translation-dont_list_untranslated_nodes-1452820-40.patch
 
 projects[i18n][version] = 1.13
+projects[i18n][patch][881322] = http://drupal.org/files/issues/i18n-filter-preferred-link-by-language-881322-43.patch
 projects[i18nviews][type] = module
 projects[i18nviews][version] = 3.x-dev
 projects[i18nviews][download][type] = git
