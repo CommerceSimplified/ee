@@ -17,7 +17,7 @@ projects[media_vimeo][version] = 2.1
 
 ; Image
 
-projects[imagecache_actions][version] = 1.6
+projects[imagecache_actions][version] = 1.7
 projects[imagecrop][type] = module
 projects[imagecrop][download][type] = git
 projects[imagecrop][download][revision] = 98d1faaa2abfcb4f5502c01fee518c4a77e29378

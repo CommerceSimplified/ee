@@ -4,7 +4,7 @@ core = 7.x
 defaults[projects][subdir] = contrib
 
 ; Search API
-projects[search_api][version] = 1.16
+projects[search_api][version] = 1.17
 projects[search_api_attachments][version] = 1.7
 projects[search_api_autocomplete][version] = 1.4
 projects[search_api_ranges][version] = 1.5
@@ -21,7 +21,7 @@ projects[search_api_et_db][type] = module
 projects[search_api_et_db][version] = 2.x-dev
 projects[search_api_et_db][download][type] = git
 projects[search_api_et_db][download][revision] = 1353e7ce609bbe1928b0447c097687d65c84e287
-projects[search_api_solr][version] = 1.9
+projects[search_api_solr][version] = 1.10
 projects[search_api_et_solr][type] = module
 projects[search_api_et_solr][version] = 1.x-dev
 projects[search_api_et_solr][download][type] = git
