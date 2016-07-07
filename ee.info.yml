@@ -43,3 +43,7 @@ dependencies:
 
   # Contrib modules.
   - token
+
+themes:
+  - bartik
+  - seven
