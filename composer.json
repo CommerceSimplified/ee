@@ -13,8 +13,8 @@
   "require": {
     "composer/installers": "^1.0.20",
     "drupal/core": "^8.0",
-    "drupal/entity": "8.1.x-dev",
-    "drupal/token": "8.1.x-dev"
+    "drupal/entity": "^8.1",
+    "drupal/token": "^8.1"
   },
   "require-dev": {
     "behat/mink": "~1.6",
@@ -31,6 +31,12 @@
       "profiles/contrib/{$name}": ["type:drupal-profile"],
       "themes/contrib/{$name}": ["type:drupal-theme"],
       "drush/commands/{$name}": ["type:drupal-drush"]
+    },
+    "patches": {
+      "drupal/core": {
+        "#1838234 Add jQuery Timepicker for the Time element of the datetime field": "https://www.drupal.org/files/issues/add_jquery_timepicker-1838234-8.patch",
+        "#2743197 Provide a workaroud to load additional profiles": "https://www.drupal.org/files/issues/2743197-load_additional_profiles_via_settings-6.patch"
+      }
     }
   }
 }
