@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Enterprise for Everyone" default="env">
+
+    <property name="drush" value="${project.basedir}/bin/drush" />
+    <property name="composer" value="/usr/local/bin/composer" />
+    <property name="npm" value="/usr/local/bin/npm" />
+    <property name="rsync" value="/usr/bin/rsync" />
+    <property name="web" value="web" />
+    <property name="profile" value="${web}/profiles/jnjcanvas" />
+    <property name="site" value="${web}/sites/default" />
+    <property name="version" value="HEAD" />
+
+    <!-- Finds Composer, NPM, and rsync. -->
+    <target name="env">
+        <if>
+            <not>
+                <available file="${drush}" property="drush.exists" />
+            </not>
+            <then>
+                <exec command="which drush" outputProperty="drush" />
+            </then>
+        </if>
+        <exec command="which composer" outputProperty="composer" />
+        <exec command="which npm" outputProperty="npm" />
+        <exec command="which rsync" outputProperty="rsync" />
+
+        <echo message="Found Drush: ${drush}" />
+        <echo message="Found Composer: ${composer}" />
+        <echo message="Found NPM: ${npm}" />
+        <echo message="Found rsync: ${rsync}" />
+    </target>
+
+    <!-- Syncs the profile into the Drupal code base. -->
+    <target name="push" depends="env">
+        <!-- Create the destination if it doesn't exist. -->
+        <mkdir dir="${profile}" />
+
+        <!-- rsync the profile, excluding developer flotsam. -->
+        <filesync destinationDir="${profile}" rsyncPath="${rsync}" sourceDir="." verbose="false" exclude=".idea,bin,build.xml,.git,.gitignore,${web},karma.conf.js,*.make,node_modules,.travis.yml,vendor" />
+
+        <!-- JS libraries and contrib modules were copied over by the file sync. -->
+        <delete dir="libraries" failonerror="true" quiet="true" />
+        <delete dir="modules/contrib" failonerror="true" quiet="true" />
+    </target>
+
+</project>

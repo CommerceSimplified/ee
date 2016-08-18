@@ -1,7 +1,6 @@
-# Ignore the contrib modules
-core
-modules/contrib
-themes/contrib
-libraries/*
-
+# Ignore files dowloaded by composer
+web
 vendor
+
+# Ignore Vagrant files
+.vagrant
