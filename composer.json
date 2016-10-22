@@ -23,7 +23,8 @@
     "drupal/workbench_moderation": "^1.1",
     "drupal/rules": "^3.0",
     "drupal/seckit": "^1.0",
-    "drupal/username_enumeration_prevention": "^1.0"
+    "drupal/username_enumeration_prevention": "^1.0",
+    "drupal/honeypot": "^1.23"
   },
   "require-dev": {
     "behat/mink": "~1.6",
