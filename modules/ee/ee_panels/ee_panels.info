@@ -1,9 +1,0 @@
-name = Panels
-description = Panels moduels and helpers.
-core = 7.x
-package = Enterprise for Everyone
-
-dependencies[] = fieldable_panels_panes
-dependencies[] = panels
-dependencies[] = page_manager
-dependencies[] = views_content

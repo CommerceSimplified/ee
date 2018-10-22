@@ -1,8 +1,0 @@
-name = User
-description = User modules and helpers.
-core = 7.x
-package = Enterprise for Everyone
-
-dependencies[] = email_registration
-dependencies[] = logintoboggan
-dependencies[] = prlp
