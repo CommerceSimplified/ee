@@ -31,16 +31,59 @@
     </target>
 
     <!-- Syncs the profile into the Drupal code base. -->
-    <target name="push" depends="env">
+    <target name="build" depends="env">
         <!-- Create the destination if it doesn't exist. -->
         <mkdir dir="${profile}" />
+        <mkdir dir="${profile}/config" />
+        <mkdir dir="${site}" />
+        <chmod file="${site}" mode="0775" />
+        <mkdir dir="config/sync"/>
 
-        <!-- rsync the profile, excluding developer flotsam. -->
-        <filesync destinationDir="${profile}" rsyncPath="${rsync}" sourceDir="." verbose="false" exclude=".idea,bin,build.xml,.git,.gitignore,${web},karma.conf.js,*.make,node_modules,.travis.yml,vendor" />
+        <symlink link="${profile}" relative="true" overwrite="true">
+            <fileset dir=".">
+                <include name="*.profile"/>
+                <include name="*.install"/>
+                <include name="*.info.yml"/>
+                <include name="modules"/>
+                <include name="themes"/>
+            </fileset>
+        </symlink>
 
-        <!-- JS libraries and contrib modules were copied over by the file sync. -->
-        <delete dir="libraries" failonerror="true" quiet="true" />
-        <delete dir="modules/contrib" failonerror="true" quiet="true" />
+        <symlink target="../../../../config/install" link="${profile}/config/install" relative="true" overwrite="true" />
+
+        <!-- Use the Platform.sh settings.php file for all builds. -->
+        <if>
+            <available file='${site}/settings.php' />
+            <then>
+                <chmod file="${site}/settings.php" mode="0775" />
+            </then>
+            <else>
+                <httpget url="https://raw.githubusercontent.com/platformsh/platformsh-example-drupal8/master/web/sites/default/settings.php" dir="${site}"/>
+            </else>
+        </if>
+
+
     </target>
 
+    <!-- Copies the platform files. -->
+    <target name="platform-build">
+        <httpget url="https://raw.githubusercontent.com/platformsh/platformsh-example-drupal8/master/web/sites/default/settings.platformsh.php" dir="${site}"/>
+    </target>
+
+    <!-- Copies files for local dev. -->
+    <target name="lando-build">
+        <copy file="${application.startdir}/dev/settings.local.php" tofile="${web}/sites/default/settings.local.php" overwrite="false"/>
+        <copy file="${application.startdir}/dev/development.services.yml" tofile="${web}/sites/development.services.yml" overwrite="false"/>
+    </target>
+
+    <!-- Destroys the installed code base. -->
+    <target name="destroy">
+        <delete failonerror="true" includeemptydirs="true">
+            <fileset dir="." defaultexcludes="false">
+                <include name="${web}/**" />
+                <include name="vendor/**" />
+                <include name="composer.lock" />
+            </fileset>
+        </delete>
+    </target>
 </project>

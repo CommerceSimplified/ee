@@ -1,0 +1,58 @@
+name: ee
+
+# Start with the default Drupal 8 recipe
+recipe: drupal8
+
+# Configure the Drupal8 recipe
+config:
+  php: '7.2'
+  via: nginx
+  webroot: web
+  drush: composer
+  database: mariadb:10.1
+  xdebug: true
+
+tooling:
+  install:
+    description: Install Application
+    cmd: true
+    service: appserver
+  devel:
+    description: Enable devel systems
+    cmd: true
+    service: appserver
+  update:
+    description: Update Application
+    cmd: true
+    service: appserver
+  demo:
+    description: Install some demo content
+    cmd: true
+    service: appserver
+
+events:
+  # Clear caches after a database import
+  post-db-import:
+  - appserver: cd $LANDO_WEBROOT && drush cr -y
+  post-install:
+  - appserver: cd $LANDO_WEBROOT && drupal si ee --langcode='en' --site-name='Enterprise for Everyone' --site-mail='admin@example.com' --account-name='admin' --account-mail='admin@example.com' --account-pass='admin' --force
+  post-devel:
+  - appserver: cd $LANDO_WEBROOT && drupal site:mode dev
+  - appserver: cd $LANDO_WEBROOT && drupal moi devel webprofiler
+  post-update:
+  - appserver: cd $LANDO_MOUNT && composer update
+  - appserver: cd $LANDO_WEBROOT && drupal updb
+  - appserver: cd $LANDO_WEBROOT && drupal upe
+
+services:
+  appserver:
+    build:
+    - "cd $LANDO_MOUNT && composer install"
+    - "mkdir -p ~/.drush/site-aliases"
+    - "ln -sf /app/drush/yoursite.aliases.drushrc.php ~/.drush/site-aliases/yoursite.drushrc.php"
+    - "cd $LANDO_MOUNT && ./bin/phing lando-build"
+
+  mailhog:
+    type: mailhog
+    hogfrom:
+    - appserver

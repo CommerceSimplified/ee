@@ -1,6 +1,10 @@
 # Ignore files dowloaded by composer
 web
 vendor
+bin
 
-# Ignore Vagrant files
-.vagrant
+# Ignore composer.lock
+composer.lock
+
+# Ignore private files
+private/*
