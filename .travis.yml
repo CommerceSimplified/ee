@@ -1,0 +1,42 @@
+language: php
+cache:
+  bundler: true
+  apt: true
+php:
+  - 5.6
+
+mysql:
+  database: drupal
+  username: root
+  encoding: utf8
+
+before_install:
+  - sudo apt-get update > /dev/null
+  - composer self-update
+  - composer --version
+
+install:
+  # add composer's global bin directory to the path
+  # see: https://github.com/drush-ops/drush#install---composer
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+  # Install Drush
+  - composer global require drush/drush:7.*
+  - phpenv rehash
+
+  # MySQL Options
+  - mysql -e 'SET GLOBAL wait_timeout = 5400;'
+  - mysql -e "SHOW VARIABLES LIKE 'wait_timeout'"
+
+  # PHP conf tweaks
+  - echo 'max_execution_time = 120' >> drupal.php.ini;
+  - echo 'sendmail_path = /bin/true' >> drupal.php.ini;
+  - phpenv config-add drupal.php.ini
+  - phpenv rehash
+
+  # Build drupal + lightning from makefile
+  - drush make --concurrency=5 build-ee.make.yml docroot -y
+
+  # Install EE
+  - cd docroot
+  - drush si ee --db-url=mysql://root:@localhost/drupal -y
