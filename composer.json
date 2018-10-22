@@ -68,7 +68,6 @@
     "drupal/coffee": "^1.0@beta",
     "drupal/config_filter": "^1.0",
     "drupal/config_ignore": "^2.0",
-    "drupal/config_installer": "^1.0",
     "drupal/config_readonly": "^1.0@beta",
     "drupal/config_role_split": "^1.0",
     "drupal/config_split": "^1.2",
