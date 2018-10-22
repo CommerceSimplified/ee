@@ -3,54 +3,129 @@
   "type": "drupal-profile",
   "description": "Enterprise for Everyone",
   "homepage": "http://drupal.org/project/ee",
-  "license": "GPL-2.0+",
-  "repositories": [
-    {
+  "license": "GPL-2.0-or-later",
+  "repositories": {
+    "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
+    },
+    "asset-packagist": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
     }
-  ],
+  },
   "require": {
     "composer/installers": "^1.0.20",
-    "cweagans/composer-patches": "~1.0",
+    "cweagans/composer-patches": "^1.6.0",
+    "desandro/imagesloaded": "^4.1.0",
+    "desandro/masonry": "^4.1.0",
     "drupal-composer/drupal-scaffold": "^2.0.0",
-    "drupal/core": "^8.2.0",
-    "drupal/config_installer": "^1.0",
+    "drupal/amp": "^1.0",
+    "drupal/amptheme": "^1.0",
+    "drupal/better_formats": "^1.0",
+    "drupal/bootstrap": "^3.0",
+    "drupal/bootstrap_layouts": "^5.1",
+    "drupal/classy_paragraphs": "^1.0",
+    "drupal/config_update": "^1.1",
     "drupal/ctools": "^3.0",
+    "drupal/diff": "^1.0",
+    "drupal/dropzonejs": "^1.0",
+    "drupal/ds": "2.x-dev",
+    "drupal/embed": "^1.0",
+    "drupal/entity_browser": "^1.0",
+    "drupal/entity_embed": "^1.0",
+    "drupal/entity_reference_revisions": "^1.4",
+    "drupal/fences": "^2.0@alpha",
+    "drupal/field_group": "^3.0",
+    "drupal/field_group_background_image": "^1.0",
+    "drupal/file_browser": "^1.0",
+    "drupal/hidden_language": "1.x-dev",
+    "drupal/image_widget_crop": "^1.0",
+    "drupal/lang_dropdown": "^2.0@beta",
+    "drupal/language_hierarchy": "^1.0@alpha",
+    "drupal/linked_field": "^1.0",
+    "drupal/metatag": "^1.0",
+    "drupal/page_manager": "^4.0-beta3",
+    "drupal/panels": "^4.2",
+    "drupal/paragraphs": "^1.0",
+    "drupal/paragraphs_edit": "^1.0",
+    "drupal/pathauto": "^1.0",
+    "drupal/preview_link": "^1.0@alpha",
+    "drupal/redirect": "^1.2",
+    "drupal/scheduled_updates": "^1.0",
+    "drupal/scheduler": "^1.0",
+    "drupal/sitemap": "^1.0",
+    "drupal/taxonomy_menu": "^3.0",
+    "drupal/video_embed_field": "^1.0",
+    "drupal/views_infinite_scroll": "^1.0",
+    "drupal/w3c_validator": "^1.1",
+    "enyo/dropzone": "4.3.0",
+    "drupal/admin_toolbar": "^1.0",
+    "drupal/adminimal_admin_toolbar": "^1.5",
+    "drupal/adminimal_theme": "^1.3",
+    "drupal/allowed_formats": "^1.1",
+    "drupal/better_module_dependencies": "^1.2",
+    "drupal/coffee": "^1.0@beta",
+    "drupal/config_filter": "^1.0",
+    "drupal/config_ignore": "^2.0",
+    "drupal/config_installer": "^1.0",
+    "drupal/config_readonly": "^1.0@beta",
+    "drupal/config_role_split": "^1.0",
+    "drupal/config_split": "^1.2",
+    "drupal/core": "~8.6.0",
+    "drupal/default_content": "^1.0",
+    "drupal/drd_agent": "^3.0",
     "drupal/entity": "^1.0",
     "drupal/features": "^3.0",
-    "drupal/token": "^1.0",
-    "drupal/workbench_moderation": "^1.1",
+    "drupal/file_entity": "^2.0",
+    "drupal/inline_entity_form": "^1.0",
+    "drupal/login_security": "^1.2",
+    "drupal/module_filter": "^3.1",
+    "drupal/no_autocomplete": "^1.0",
+    "drupal/password_policy": "^3.0",
     "drupal/rules": "^3.0",
-    "drupal/seckit": "^1.0",
-    "drupal/username_enumeration_prevention": "^1.0",
-    "drupal/honeypot": "^1.23"
+    "drupal/token": "^1.0",
+    "drupal/username_enumeration_prevention": "^1.0"
   },
   "require-dev": {
-    "behat/mink": "~1.6",
-    "behat/mink-goutte-driver": "~1.2",
-    "geerlingguy/drupal-vm": "^3.2.0",
-    "mikey179/vfsStream": "~1.2",
-    "phing/phing": "^2.14",
-    "phpunit/phpunit": "~4.8",
-    "symfony/css-selector": "2.7.*"
+    "drush/drush": "^8.1.15",
+    "drupal/coder": "^2.0",
+    "drupal/console": "^1.0.2",
+    "drupal/devel": "^1.0",
+    "drupal/field_name_prefix_remove": "1.x-dev",
+    "drupal/masquerade": "^2.0@beta",
+    "phing/phing": "~2.16",
+    "pear/HTTP_Request2": "2.3.0"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
+  "config": {
+    "bin-dir": "bin",
+    "sort-packages": true
+  },
   "scripts": {
     "post-install-cmd": [
       "@composer drupal-scaffold",
-      "vendor/phing/phing/bin/phing push"
+      "vendor/phing/phing/bin/phing build"
     ],
     "post-update-cmd": [
-      "vendor/phing/phing/bin/phing push"
+      "vendor/phing/phing/bin/phing build"
     ],
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
   },
   "extra": {
+    "installer-types": [
+      "bower-asset",
+      "npm-asset"
+    ],
     "installer-paths": {
       "web/core": [
         "type:drupal-core"
+      ],
+      "web/libraries/{$name}": [
+        "type:drupal-library",
+        "type:bower-asset",
+        "type:npm-asset"
       ],
       "web/modules/contrib/{$name}": [
         "type:drupal-module"
@@ -66,10 +141,81 @@
       ]
     },
     "patches": {
+      "phing/phing": {
+        "#684 - Relative Symlinks": "https://patch-diff.githubusercontent.com/raw/phingofficial/phing/pull/685.patch"
+      },
       "drupal/core": {
-        "#2699157 - Plugin Lazy loading can cause usort warning": "https://www.drupal.org/files/issues/Iterating-through-array--2699157.patch",
-        "#1838234 - Add jQuery Timepicker for the Time element of the datetime field": "https://www.drupal.org/files/issues/add_jquery_timepicker-1838234-8.patch",
-        "#2743197 - Provide a workaroud to load additional profiles": "https://www.drupal.org/files/issues/2743197-load_additional_profiles_via_settings-6.patch"
+        "#1356276 - Allow profiles to provide a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/2018-07-12/1356276-473.patch",
+        "#2189267 - Content vs. Interface language mismatch": "https://www.drupal.org/files/issues/2018-06-18/2189267-78.patch",
+        "#2280639 - Add a FieldStorageDefinition class": "https://www.drupal.org/files/issues/2018-07-24/2280639-FieldStorageDefinition-22.patch",
+        "#2584729 - Hook entity_field_storage_info is broken": "https://www.drupal.org/files/issues/2018-07-17/2584729-12.patch",
+        "#2599228 - Programmatically created translatable content type returns SQL error on content creation": "https://www.drupal.org/files/issues/2018-08-28/2599228-61.patch",
+        "#2679775 - Fixes float issue with inline label fields (entity references on most cases).": "https://www.drupal.org/files/issues/2018-03-30/2679775-19-clearfix_enclosing_label_and_contents.patch",
+        "#2727869 - Translatability clue applied to multi-valued fields": "https://www.drupal.org/files/issues/2018-03-11/multivalue_fields_translatability_clue_8.4.x_2727869-08.patch",
+        "#2759397 - Patch EntityReferenceItemNormalizer to prevent recursion": "https://www.drupal.org/files/issues/2759397-1-entity_reference_recursion.patch",
+        "#2794481 - Allow end date to be optional": "https://www.drupal.org/files/issues/2018-05-14/2794481-60.patch",
+        "#2819561 - Managed file form element duplicated id attribute": "https://www.drupal.org/files/issues/managed-file-duplicate-id-2819561-7.patch",
+        "#2869592 - Disabled update module shouldn't produce a status report warning": "https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch",
+        "#2885441 - EntityReferenceAutocompleteWidget should define its size setting as an integer": "https://www.drupal.org/files/issues/2885441-12.patch",
+        "#2902069 - Allow Url alias for private file uploads": "https://www.drupal.org/files/issues/2902069-9-allow_url_alias_on_private_files.patch",
+        "#2935932 - Add a FieldDefinition class for defining bundle fields in code.": "https://www.drupal.org/files/issues/2018-07-24/2935932-93-post-2280639.patch",
+        "#2910031 - Improved varchar / string generation": "https://www.drupal.org/files/issues/2018-07-21/2910031-16-phrase-gen-with-test.patch"
+      },
+      "drupal/real_aes": {
+        "#2727845 - Update module to use Defuse PHP Encryption 2.0": "https://www.drupal.org/files/issues/d8_update_module_to-2727845-15-do-not-test.patch"
+      },
+      "drupal/default_content": {
+        "#2640734 - Allow manual imports": "https://www.drupal.org/files/issues/default_content-allow_manual_imports-2640734-72.patch",
+        "#2698425 - Do not reimport existing entities": "https://www.drupal.org/files/issues/2018-06-05/default_content-dont-reimport-existing-entities-2698425-102.patch",
+        "#2907594 - Entity does not correspond to an entity on this site during import": "https://www.drupal.org/files/issues/entity_does_not-2907594-2.patch"
+      },
+      "drupal/file_entity": {
+        "#2799897 - Simplify file_entity_file_download": "https://www.drupal.org/files/issues/file_entitiy-hook_file_download-2799897-7.patch",
+        "#2892628 - Improve file download access control": "https://www.drupal.org/files/issues/file_entity-download_access-2892628-2.patch"
+      },
+      "drupal/password_policy": {
+        "#2860671 - Password Policy Cron Fix": "https://www.drupal.org/files/issues/2860671-password-policy-cron-fix-2.patch"
+      },
+      "drupal/inline_entity_form":{
+        "#2822764 - Support adding new entities when translating": "https://www.drupal.org/files/issues/2018-06-21/inline_entity_form-support_adding_new_entities_when_translating-2822764-32.patch"
+      },
+      "drupal/adminimal_theme": {
+        "2696393 - Checkboxes with .error class are not usable": "https://www.drupal.org/files/issues/adminimal-checkboxes_with_error-2696393-3.patch",
+        "2997505 - Once the user does not select any checkbox on the required tree": "https://www.drupal.org/files/issues/2018-09-05/2997505-user-not-select-any-checkbox-all-red.patch"
+      },
+      "drupal/entity_embed": {
+        "2832504 - Send the CKEditor instance ID to the embed.preview route": "https://www.drupal.org/files/issues/2832504-2.patch"
+      },
+      "drupal/entity_browser": {
+        "2865928 - The View widget should filter based on field settings": "https://www.drupal.org/files/issues/entity-browser-view-context-2865928-14.patch",
+        "2877751 - Inform users how many items they can add to a field that uses an entity browser": "https://www.drupal.org/files/issues/2877751-17.patch"
+      },
+      "drupal/page_manager": {
+        "#2876880 - page_variant entity type does not exist when installing or enabling": "https://www.drupal.org/files/issues/2876880-page-varient-cache-2.patch",
+        "#2873884 - Use flexbox to improve the Page Information interface": "https://www.drupal.org/files/issues/page_manager-use_flexbox_to_improve_page_information_ui-2873884-1.patch",
+        "#2626090 - Page title block placed on block page renders empty": "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
+        "#2909040 - Improve page_manager url handling": "https://www.drupal.org/files/issues/2909040-2.patch",
+        "#2799885 - Warning: Missing argument 1 for page_manager_ui at PageVariantContextsForm::getContextClass()": "https://www.drupal.org/files/issues/2018-04-14/2799885-11.patch"
+      },
+      "drupal/panels": {
+        "2878684 - Use String.match to correlate regions when switching Layouts in Panels IPE": "https://www.drupal.org/files/issues/panels-ipe-2878684-3.patch",
+        "2825034 - Form error messages do not appear in IPE": "https://www.drupal.org/files/issues/2825034-6.patch"
+      },
+      "drupal/devel": {
+        "#2935280 - Deprecated constant REQUEST_TIME": "https://www.drupal.org/files/issues/deprecated_constant-2935280-4.patch",
+        "#2644022 - DevelGenerateBase::populateFields() does not support base fields": "https://www.drupal.org/files/issues/2018-06-28/2644022-17-post2935280.patch"
+      },
+      "drupal/language_hierarchy": {
+        "#2830291 - D8 URL alias language fallbacks": "https://www.drupal.org/files/issues/language_hierarchy-2830291-url-alias-fallback_0.patch",
+        "#2825851 - Limit Views results to the 'most-relevant' translation for the current site language + fallback hierarchy": "https://www.drupal.org/files/issues/language_hierarchy-limit_views_results-2825851-14.patch"
+      },
+      "drupal/field_group": {
+        "#2978747 - Hide group if all fields are hidden": "https://www.drupal.org/files/issues/2018-06-11/hide-show-field-group-2978747-4.patch",
+        "#2969470 - Change URL using anchors when opening a tab": "https://www.drupal.org/files/issues/2018-06-07/horizontal-tabs-change-url-hash-2969470-5.patch",
+        "#2904585 - Create field_group.api.php for D8 version": "https://www.drupal.org/files/issues/2904585-2-field_group-api-php.patch"
+      },
+      "drupal/entity_reference_revisions": {
+        "#2568187 - Support devel_generate, fatal error": "https://www.drupal.org/files/issues/2568187-use-upstream-generate.patch"
       }
     }
   }

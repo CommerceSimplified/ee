@@ -6,7 +6,7 @@
     <property name="npm" value="/usr/local/bin/npm" />
     <property name="rsync" value="/usr/bin/rsync" />
     <property name="web" value="web" />
-    <property name="profile" value="${web}/profiles/jnjcanvas" />
+    <property name="profile" value="${web}/profiles/ee" />
     <property name="site" value="${web}/sites/default" />
     <property name="version" value="HEAD" />
 

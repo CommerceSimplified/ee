@@ -24,11 +24,11 @@ function ee_install() {
   $user->roles[] = 'administrator';
   $user->save();
 
-  // Set the default and admin theme
+  // Set the default and admin theme.
   \Drupal::configFactory()
     ->getEditable('system.theme')
-    ->set('default', 'bartik')
-    ->set('admin', 'seven')
+    ->set('default', 'bootstrap')
+    ->set('admin', 'adminimal_theme')
     ->save(TRUE);
 
   // Enable the admin theme.
@@ -37,6 +37,11 @@ function ee_install() {
     ->set('use_admin_theme', TRUE)
     ->save(TRUE);
 
+  // Use Cosmo Bootstrap theme.
+  \Drupal::configFactory()
+    ->getEditable('bootstrap.settings')
+    ->set('cdn_jsdelivr_theme', 'cosmo')
+    ->save(TRUE);
 }
 
 /**
