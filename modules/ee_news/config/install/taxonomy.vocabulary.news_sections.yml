@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'News Sections'
+vid: news_sections
+description: 'Categorise articles into sections for display on news pages'
+hierarchy: 0
+weight: 0

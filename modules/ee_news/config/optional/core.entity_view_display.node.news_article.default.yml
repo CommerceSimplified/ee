@@ -1,0 +1,53 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.news_article
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.news_article.default
+targetEntityType: node
+bundle: news_article
+mode: default
+content:
+  body:
+    label: hidden
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  listicle:
+    type: entity_reference_revisions_entity_view
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+  news_section:
+    type: entity_reference_label
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  tags:
+    type: entity_reference_label
+    weight: 4
+    region: content
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+hidden:
+  langcode: true

@@ -1,0 +1,9 @@
+name: 'Listicle'
+type: module
+description: 'Listicles for content types'
+core: 8.x
+package: 'Enterprise for Everyone'
+
+dependencies:
+  - paragraphs
+  - ee_editor

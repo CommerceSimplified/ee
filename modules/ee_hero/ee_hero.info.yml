@@ -1,0 +1,12 @@
+name: 'Hero'
+type: module
+description: 'Heros for Content types'
+core: 8.x
+package: 'Enterprise for Everyone'
+dependencies:
+  - paragraphs
+  - file
+  - text
+  - video_embed_field
+  - image
+  - ee_editor

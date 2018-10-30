@@ -1,0 +1,13 @@
+langcode: de-DE
+status: true
+dependencies:
+  module:
+    - language_hierarchy
+third_party_settings:
+  language_hierarchy:
+    fallback_langcode: de
+id: de-DE
+label: 'German (Germany)'
+direction: ltr
+weight: 5
+locked: false

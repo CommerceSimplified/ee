@@ -1,0 +1,106 @@
+<?php
+
+/**
+ * @file
+ * Contains ee_listicle.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Field\FieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinition;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ee_listicle_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ee_listicle module.
+    case 'help.page.ee_listicle':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Listicles for content types') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_bundle_field_info().
+ */
+function ee_listicle_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+  $field_manager = \Drupal::service('entity_field.manager');
+  $storage_definitions = $field_manager->getFieldStorageDefinitions($entity_type->id());
+  $fields = array();
+
+  if ($entity_type->id() == 'paragraph' && $bundle == 'listicle_basic') {
+
+    $fields['title'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['title'])
+      ->setLabel(t('Title'))
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', [
+        'weight' => -5,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+    ;
+
+    $fields['body'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['body'])
+      ->setLabel(t('Body'))
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', [
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+    ;
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_entity_field_storage_info().
+ *
+ * {@inheritdoc}
+ */
+function ee_listicle_entity_field_storage_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+
+  if ($entity_type->id() == 'paragraph') {
+    $fields['title'] = FieldStorageDefinition::create('string')
+      ->setName('title')
+      ->setLabel(t('Title'))
+      ->setCardinality(1)
+      ->setTranslatable(TRUE)
+      ->setTargetEntityTypeId($entity_type->id());
+
+    $fields['body'] = FieldStorageDefinition::create('text_with_summary')
+      ->setName('body')
+      ->setLabel(t('Body'))
+      ->setCardinality(1)
+      ->setTranslatable(TRUE)
+      ->setTargetEntityTypeId($entity_type->id());
+  }
+
+  if ($entity_type->id() == 'node') {
+    $fields['listicle'] = FieldStorageDefinition::create('entity_reference_revisions')
+      ->setName('listicle')
+      ->setLabel(t('Listicle Items'))
+      ->setCardinality(FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED)
+      ->setTranslatable(FALSE)
+      ->setSetting('target_type', 'paragraph')
+      ->setTargetEntityTypeId($entity_type->id());
+  }
+
+  return $fields;
+}
+

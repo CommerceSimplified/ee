@@ -1,0 +1,80 @@
+<?php
+
+/**
+ * @file
+ * Contains ee_metatag.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\FieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinition;
+
+/**
+ * Implements hook_help().
+ */
+function ee_metatag_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ee_metatag module.
+    case 'help.page.ee_metatag':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Adds base metatag functionality') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+
+
+/**
+ * Implements hook_entity_bundle_field_info().
+ */
+function ee_metatag_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+  $field_manager = \Drupal::service('entity_field.manager');
+  $storage_definitions = $field_manager->getFieldStorageDefinitions($entity_type->id());
+  $fields = array();
+
+  if ($entity_type->id() == 'node') {
+
+    $fields['metatag_description'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['metatag_description'])
+      ->setLabel(t('Description'))
+      ->setDescription('Description used in meta tags, limited to 200 characters')
+      ->setTranslatable(TRUE)
+      ->setDisplayConfigurable('view', FALSE)
+      ->setDisplayOptions('form', [
+        'weight' => 20,
+        'settings' => [
+          'size' => '200',
+        ]
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+    ;
+
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_entity_field_storage_info().
+ *
+ * {@inheritdoc}
+ */
+function ee_metatag_entity_field_storage_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+
+  if ($entity_type->id() == 'node') {
+    $fields['metatag_description'] = FieldStorageDefinition::create('string')
+      ->setName('metatag_description')
+      ->setLabel(t('Description'))
+      ->setCardinality(1)
+      ->setTranslatable(TRUE)
+      ->setSetting('max_length', '200')
+      ->setTargetEntityTypeId($entity_type->id())
+    ;
+  }
+
+  return $fields;
+}

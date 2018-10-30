@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: term_news_sections
+label: 'News Sections'
+type: 'canonical_entities:taxonomy_term'
+pattern: 'news/[term:name]'
+selection_criteria:
+  761e3a00-727d-4968-a8c3-101d67d3c9c2:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      news_sections: news_sections
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 761e3a00-727d-4968-a8c3-101d67d3c9c2
+selection_logic: and
+weight: -5
+relationships: {  }

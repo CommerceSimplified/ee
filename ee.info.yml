@@ -18,12 +18,15 @@ dependencies:
   - password_policy_history
   - password_policy_length
   - password_policy_username
+  - seckit
+  - username_enumeration_prevention
 
 install:
   # Core Modules
   - block
   - dblog
   - dynamic_page_cache
+  - help
   - node
   - page_cache
   - shortcut

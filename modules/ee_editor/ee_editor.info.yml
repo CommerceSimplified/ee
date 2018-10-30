@@ -1,0 +1,12 @@
+name: 'Editor'
+type: module
+description: 'Editor settings and text format filters'
+core: 8.x
+package: 'Enterprise for Everyone'
+
+dependencies:
+  - better_formats
+  - ckeditor
+  - editor
+  - entity_embed
+  - filter

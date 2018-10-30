@@ -27,7 +27,7 @@ function ee_install() {
   // Set the default and admin theme.
   \Drupal::configFactory()
     ->getEditable('system.theme')
-    ->set('default', 'bootstrap')
+    ->set('default', 'bartik')
     ->set('admin', 'adminimal_theme')
     ->save(TRUE);
 
@@ -35,12 +35,6 @@ function ee_install() {
   \Drupal::configFactory()
     ->getEditable('node.settings')
     ->set('use_admin_theme', TRUE)
-    ->save(TRUE);
-
-  // Use Cosmo Bootstrap theme.
-  \Drupal::configFactory()
-    ->getEditable('bootstrap.settings')
-    ->set('cdn_jsdelivr_theme', 'cosmo')
     ->save(TRUE);
 }
 

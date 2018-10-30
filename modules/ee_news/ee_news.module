@@ -1,0 +1,158 @@
+<?php
+
+/**
+ * @file
+ * Contains ee_news.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Field\FieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinition;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ee_news_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ee_news module.
+    case 'help.page.ee_news':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('News room feature with articles.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_bundle_field_info().
+ */
+function ee_news_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+  $field_manager = \Drupal::service('entity_field.manager');
+  $storage_definitions = $field_manager->getFieldStorageDefinitions($entity_type->id());
+  $fields = array();
+
+  if ($entity_type->id() == 'node' && $bundle == 'news_article') {
+
+    $fields['news_section'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['news_section'])
+      ->setLabel(t('News Section'))
+      ->setRequired(TRUE)
+      ->setSetting('target_type', 'taxonomy_term')
+      ->setSetting('handler', 'default')
+      ->setSetting('handler_settings', [
+        'target_bundles' => [
+          'news_sections' => 'news_sections'
+        ]
+      ])
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'weight' => -2,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', [
+        'weight' => -2,
+        'type' => 'options_select',
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+    ;
+
+    $fields['body'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['body'])
+      ->setLabel(t('Body'))
+      ->setTranslatable(TRUE)
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', [
+        'weight' => -4,
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+    ;
+
+    $fields['hero'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['hero'])
+      ->setLabel(t('Hero'))
+      ->setSetting('target_type', 'paragraph')
+      ->setSetting('handler', 'default')
+      ->setSetting('handler_settings', [
+        'target_bundles' => [
+          'hero_image' => 'hero_image',
+          'hero_video' => 'hero_video',
+        ]
+      ])
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'weight' => -20,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', [
+        'weight' => -1,
+        'type' => 'entity_reference_paragraphs',
+        'settings' => [
+          'title' => 'Hero',
+          'title_plural' => 'Heros',
+          'edit_mode' => 'open',
+          'add_mode' => 'button',
+          'form_display_mode' => 'default',
+          'default_paragraph_type' => '_none',
+        ]
+      ])
+      ->setDisplayConfigurable('form', TRUE)
+    ;
+
+    $fields['listicle'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['listicle'])
+      ->setLabel(t('Listicle'))
+      ->setSetting('target_type', 'paragraph')
+      ->setSetting('handler', 'default')
+      ->setSetting('handler_settings', [
+        'target_bundles' => [
+          'listicle_basic' => 'listicle_basic'
+        ]
+      ])
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'weight' => 5,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', [
+        'weight' => 5,
+        'type' => 'entity_reference_paragraphs',
+        'settings' => [
+          'title' => 'Listicle',
+          'title_plural' => 'Listicles',
+          'edit_mode' => 'open',
+          'add_mode' => 'dropdown',
+          'form_display_mode' => 'default',
+          'default_paragraph_type' => '_none',
+        ]
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_entity_field_storage_info().
+ *
+ * {@inheritdoc}
+ */
+function ee_news_entity_field_storage_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+
+  if ($entity_type->id() == 'node') {
+    $fields['news_section'] = FieldStorageDefinition::create('entity_reference')
+      ->setName('news_section')
+      ->setLabel(t('News Section'))
+      ->setCardinality(1)
+      ->setTranslatable(FALSE)
+      ->setSetting('target_type', 'taxonomy_term')
+      ->setTargetEntityTypeId($entity_type->id());
+  }
+
+  return $fields;
+}

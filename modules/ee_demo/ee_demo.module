@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains ee_demo.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ee_demo_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ee_demo module.
+    case 'help.page.ee_demo':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Install some demonstration content') . '</p>';
+      return $output;
+
+    default:
+  }
+}

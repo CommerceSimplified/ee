@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hero_video
+label: 'Video Hero'
+icon_uuid: null
+description: 'Single video hero with overlay text'
+behavior_plugins: {  }

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: hero_image
+label: 'Image Hero'
+icon_uuid: null
+description: 'Single image hero with overlay text'
+behavior_plugins: {  }

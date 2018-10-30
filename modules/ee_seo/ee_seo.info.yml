@@ -1,0 +1,9 @@
+name: 'SEO'
+description: 'Search engine optimization.'
+core: 8.x
+package: 'Enterprise for Everyone'
+
+dependencies:
+  - pathauto
+  - subpathauto
+  - xmlsitemap

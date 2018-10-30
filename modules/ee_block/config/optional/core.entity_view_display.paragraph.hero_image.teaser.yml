@@ -1,0 +1,38 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.paragraph.teaser
+    - paragraphs.paragraphs_type.hero_image
+  module:
+    - file
+    - text
+id: paragraph.hero_image.teaser
+targetEntityType: paragraph
+bundle: hero_image
+mode: teaser
+content:
+  body:
+    label: hidden
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  hero_image:
+    label: hidden
+    weight: 1
+    region: content
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+  title:
+    label: hidden
+    weight: 2
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden: {  }

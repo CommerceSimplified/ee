@@ -1,0 +1,13 @@
+langcode: fr-CH
+status: true
+dependencies:
+  module:
+    - language_hierarchy
+third_party_settings:
+  language_hierarchy:
+    fallback_langcode: fr
+id: fr-CH
+label: 'French (Switzerland)'
+direction: ltr
+weight: 6
+locked: false

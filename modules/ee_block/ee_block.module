@@ -1,0 +1,29 @@
+<?php
+
+use Drupal\Core\Field\FieldDefinition;
+use Drupal\Core\Entity\EntityTypeInterface;
+
+/**
+ * Implements hook_entity_bundle_field_info().
+ */
+function ee_block_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+  $field_manager = \Drupal::service('entity_field.manager');
+  $storage_definitions = $field_manager->getFieldStorageDefinitions($entity_type->id());
+  $fields = [];
+
+  if ($entity_type->id() == 'block_content' && $bundle == 'basic') {
+    $fields['body'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['body'])
+      ->setLabel(t('Body'))
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'weight' => -1,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', [
+        'weight' => -1,
+      ])
+      ->setDisplayConfigurable('form', TRUE);
+  }
+
+  return $fields;
+}

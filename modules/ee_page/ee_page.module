@@ -1,0 +1,29 @@
+<?php
+
+use Drupal\Core\Field\FieldDefinition;
+
+/**
+ * Implements hook_entity_bundle_field_info().
+ */
+function ee_page_entity_bundle_field_info(\Drupal\Core\Entity\EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+  $field_manager = \Drupal::service('entity_field.manager');
+  $storage_definitions = $field_manager->getFieldStorageDefinitions($entity_type->id());
+
+  if ($entity_type->id() == 'node' && $bundle == 'page') {
+    $fields = array();
+
+    $fields['body'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['body'])
+      ->setLabel(t('Body'))
+      ->setDisplayOptions('view', [
+        'label' => 'hidden',
+        'weight' => 0,
+      ])
+      ->setDisplayConfigurable('view', TRUE)
+      ->setDisplayOptions('form', [
+        'weight' => -4,
+      ])
+    ;
+
+    return $fields;
+  }
+}

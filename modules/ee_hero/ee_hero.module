@@ -1,0 +1,183 @@
+<?php
+
+/**
+ * @file
+ * Contains ee_hero.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Field\FieldDefinition;
+use Drupal\Core\Field\FieldStorageDefinition;
+use Drupal\Core\Entity\EntityTypeInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
+
+/**
+ * Implements hook_help().
+ */
+function ee_hero_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the ee_hero module.
+    case 'help.page.ee_hero':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Heros for Content types') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_bundle_field_info().
+ */
+function ee_hero_entity_bundle_field_info(EntityTypeInterface $entity_type, $bundle, array $base_field_definitions) {
+  $field_manager = \Drupal::service('entity_field.manager');
+  $storage_definitions = $field_manager->getFieldStorageDefinitions($entity_type->id());
+  $fields = array();
+
+  if ($entity_type->id() == 'paragraph') {
+    if (in_array($bundle, ['hero_image', 'hero_video'])) {
+      $fields['title'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['title'])
+        ->setLabel(t('Title'))
+        ->setDisplayOptions('view', [
+          'label' => 'hidden',
+          'weight' => -5,
+        ])
+        ->setDisplayConfigurable('view', TRUE)
+        ->setDisplayOptions('form', [
+          'weight' => -5,
+        ])
+        ->setDisplayConfigurable('form', TRUE);
+      ;
+
+      $fields['body'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['body'])
+        ->setLabel(t('Body Text'))
+        ->setDisplayOptions('view', [
+          'label' => 'hidden',
+          'weight' => -4,
+        ])
+        ->setDisplayConfigurable('view', TRUE)
+        ->setDisplayOptions('form', [
+          'weight' => -4,
+        ])
+        ->setDisplayConfigurable('form', TRUE);
+      ;
+    }
+
+    if ($bundle == 'hero_image') {
+      $fields['hero_image'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['hero_image'])
+        ->setLabel(t('Image'))
+        ->setRequired(TRUE)
+        ->setSetting('handler', 'default')
+        ->setSettings([
+          'file_directory' => '[date:custom:Y]-[date:custom:m]',
+          'file_extensions' => 'png gif jpg jpeg',
+          'max_filesize' => '',
+          'alt_field' => TRUE,
+          'alt_field_required' => TRUE,
+          'title_field' => TRUE,
+          'title_field_required' => FALSE,
+        ])
+        ->setDisplayOptions('view', [
+          'label' => 'hidden',
+          'weight' => -20,
+        ])
+        ->setDisplayConfigurable('view', TRUE)
+        ->setDisplayOptions('form', [
+          'weight' => 5,
+          'type' => 'image_image',
+          'settings' => [
+            'progress_indicator' => 'throbber',
+            'preview_image_style' => 'thumbnail',
+          ]
+        ])
+        ->setDisplayConfigurable('form', TRUE)
+      ;
+    }
+
+    if ($bundle == 'hero_video') {
+      $fields['hero_video'] = FieldDefinition::createFromFieldStorageDefinition($storage_definitions['hero_video'])
+        ->setLabel(t('Video'))
+        ->setDescription(t('Paste the URL of a Vimeo or YouTube video, or YouTube Playlist'))
+        ->setRequired(TRUE)
+        ->setSetting('handler', 'default')
+        ->setSettings([
+          'allowed_providers' => [
+            'vimeo' => 'vimeo',
+            'youtube' => 'youtube',
+            'youtube_playlist' => 'youtube_playlist',
+          ]
+        ])
+        ->setDisplayOptions('view', [
+          'label' => 'hidden',
+          'weight' => -20,
+        ])
+        ->setDisplayConfigurable('view', TRUE)
+        ->setDisplayOptions('form', [
+          'weight' => 5,
+          'type' => 'video_embed_field_textfield',
+        ])
+        ->setDisplayConfigurable('form', TRUE)
+      ;
+    }
+  }
+
+  return $fields;
+}
+
+/**
+ * Implements hook_entity_field_storage_info().
+ *
+ * {@inheritdoc}
+ */
+function ee_hero_entity_field_storage_info(EntityTypeInterface $entity_type) {
+  $fields = [];
+
+  if ($entity_type->id() == 'paragraph') {
+    $fields['title'] = FieldStorageDefinition::create('string')
+      ->setName('title')
+      ->setLabel(t('Title'))
+      ->setCardinality(1)
+      ->setTranslatable(TRUE)
+      ->setTargetEntityTypeId($entity_type->id())
+    ;
+
+    $fields['body'] = FieldStorageDefinition::create('text_with_summary')
+      ->setName('body')
+      ->setLabel(t('Body'))
+      ->setCardinality(1)
+      ->setTranslatable(TRUE)
+      ->setTargetEntityTypeId($entity_type->id())
+    ;
+
+    $fields['hero_image'] = FieldStorageDefinition::create('image')
+      ->setName('hero_image')
+      ->setLabel(t('Image'))
+      ->setCardinality(1)
+      ->setTranslatable(FALSE)
+      ->setSetting('target_type', 'file')
+      ->setSetting('uri_scheme', 'public')
+      ->setTargetEntityTypeId($entity_type->id())
+    ;
+
+    $fields['hero_video'] = FieldStorageDefinition::create('video_embed_field')
+      ->setName('hero_video')
+      ->setLabel(t('Video'))
+      ->setCardinality(1)
+      ->setTranslatable(TRUE)
+      ->setTargetEntityTypeId($entity_type->id())
+    ;
+  }
+
+  if ($entity_type->id() == 'node') {
+    $fields['hero'] = FieldStorageDefinition::create('entity_reference_revisions')
+      ->setName('hero')
+      ->setLabel(t('Hero'))
+      ->setCardinality(1)
+      ->setTranslatable(FALSE)
+      ->setSetting('target_type', 'paragraph')
+      ->setTargetEntityTypeId($entity_type->id());
+  }
+
+  return $fields;
+}

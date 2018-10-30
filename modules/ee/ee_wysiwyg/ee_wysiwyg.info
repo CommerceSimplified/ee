@@ -1,9 +1,0 @@
-name = Wysiwyg
-description = Text Filter and CKEditor settings
-core = 7.x
-package = Enterprise for Everyone
-
-dependencies[] = filter
-dependencies[] = ckeditor
-dependencies[] = linkit
-dependencies[] = linkit_views

@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - hidden_language
+third_party_settings:
+  hidden_language:
+    hidden: true
+id: fr
+label: French
+direction: ltr
+weight: -9
+locked: false

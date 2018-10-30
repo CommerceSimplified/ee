@@ -1,0 +1,13 @@
+langcode: de-CH
+status: true
+dependencies:
+  module:
+    - language_hierarchy
+third_party_settings:
+  language_hierarchy:
+    fallback_langcode: de
+id: de-CH
+label: 'German (Switzerland)'
+direction: ltr
+weight: 7
+locked: false

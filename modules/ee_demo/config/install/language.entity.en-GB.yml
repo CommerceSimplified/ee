@@ -1,0 +1,13 @@
+langcode: en-GB
+status: true
+dependencies:
+  module:
+    - language_hierarchy
+third_party_settings:
+  language_hierarchy:
+    fallback_langcode: en
+id: en-GB
+label: 'English (UK)'
+direction: ltr
+weight: 3
+locked: false

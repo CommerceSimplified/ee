@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Performs a standard Drupal installation with additional configuration of J&J OS Canvas.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function ee_metatag_install() {
+  \Drupal::configFactory()
+    ->getEditable('metatag.metatag_defaults.node')
+    ->set('tags.twitter_cards_description', '[node:metatag_description]')
+    ->set('tags.twitter_cards_type', 'summary')
+    ->save(TRUE);
+}

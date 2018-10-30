@@ -1,0 +1,10 @@
+name: 'Metatag'
+type: module
+description: 'Adds base metatag functionality'
+core: 8.x
+package: 'Enterprise for Everyone'
+dependencies:
+  - metatag
+  - metatag_twitter_cards
+  - metatag_open_graph
+  - metatag_dc

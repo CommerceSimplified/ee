@@ -38,11 +38,13 @@ events:
   - appserver: cd $LANDO_WEBROOT && drupal si ee --langcode='en' --site-name='Enterprise for Everyone' --site-mail='admin@example.com' --account-name='admin' --account-mail='admin@example.com' --account-pass='admin' --force
   post-devel:
   - appserver: cd $LANDO_WEBROOT && drupal site:mode dev
-  - appserver: cd $LANDO_WEBROOT && drupal moi devel webprofiler
+  - appserver: cd $LANDO_WEBROOT && drupal moi devel field_ui views_ui
   post-update:
   - appserver: cd $LANDO_MOUNT && composer update
   - appserver: cd $LANDO_WEBROOT && drupal updb
   - appserver: cd $LANDO_WEBROOT && drupal upe
+  post-demo:
+  - appserver: cd $LANDO_WEBROOT && drupal moi ee_demo
 
 services:
   appserver:

@@ -1,0 +1,13 @@
+langcode: fr-FR
+status: true
+dependencies:
+  module:
+    - language_hierarchy
+third_party_settings:
+  language_hierarchy:
+    fallback_langcode: fr
+id: fr-FR
+label: 'French (France)'
+direction: ltr
+weight: 4
+locked: false

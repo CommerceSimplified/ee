@@ -1,0 +1,22 @@
+name: Newsroom
+type: module
+description: 'Newsroom with sections and articles'
+core: 8.x
+package: 'Enterprise for Everyone'
+
+dependencies:
+  - field
+  - field_group
+  - menu_ui
+  - node
+  - path
+  - pathauto
+  - scheduler
+  - taxonomy
+  - text
+  - user
+  - views
+  - ee_listicle
+  - ee_metatag
+  - ee_hero
+  - ee_editor

@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: listicle_basic
+label: 'Basic Listicle'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }
