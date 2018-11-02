@@ -37,6 +37,7 @@ install:
   - admin_toolbar
   - admin_toolbar_tools
   - adminimal_admin_toolbar
+  - entity_toolbar
   - allowed_formats
   - better_module_dependencies
   - coffee
