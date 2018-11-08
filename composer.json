@@ -152,11 +152,11 @@
         "#684 - Relative Symlinks": "https://patch-diff.githubusercontent.com/raw/phingofficial/phing/pull/685.patch"
       },
       "drupal/core": {
-        "#1356276 - Allow profiles to provide a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/2018-07-12/1356276-473.patch",
+        "#1356276 - Allow profiles to provide a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/2018-10-23/1356276-549-8.6.x.patch",
         "#2189267 - Content vs. Interface language mismatch": "https://www.drupal.org/files/issues/2018-06-18/2189267-78.patch",
         "#2280639 - Add a FieldStorageDefinition class": "https://www.drupal.org/files/issues/2018-07-24/2280639-FieldStorageDefinition-22.patch",
         "#2584729 - Hook entity_field_storage_info is broken": "https://www.drupal.org/files/issues/2018-07-17/2584729-12.patch",
-        "#2599228 - Programmatically created translatable content type returns SQL error on content creation": "https://www.drupal.org/files/issues/2018-08-28/2599228-61.patch",
+        "#2599228 - Programmatically created translatable content type returns SQL error on content creation": "https://www.drupal.org/files/issues/2018-10-06/2599228-74.patch",
         "#2679775 - Fixes float issue with inline label fields (entity references on most cases).": "https://www.drupal.org/files/issues/2018-03-30/2679775-19-clearfix_enclosing_label_and_contents.patch",
         "#2727869 - Translatability clue applied to multi-valued fields": "https://www.drupal.org/files/issues/2018-03-11/multivalue_fields_translatability_clue_8.4.x_2727869-08.patch",
         "#2759397 - Patch EntityReferenceItemNormalizer to prevent recursion": "https://www.drupal.org/files/issues/2759397-1-entity_reference_recursion.patch",
