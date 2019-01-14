@@ -154,20 +154,20 @@
       "drupal/core": {
         "#1356276 - Allow profiles to provide a base/parent profile and load them in the correct order": "https://www.drupal.org/files/issues/2018-10-23/1356276-549-8.6.x.patch",
         "#2280639 - Add a FieldStorageDefinition class": "https://www.drupal.org/files/issues/2018-07-24/2280639-FieldStorageDefinition-22.patch",
+        "#2413191 - Shipping a profile with multiple languages without locale module not possible": "https://www.drupal.org/files/issues/drupal-2413191-21.patch",
         "#2584729 - Hook entity_field_storage_info is broken": "https://www.drupal.org/files/issues/2018-07-17/2584729-12.patch",
         "#2599228 - Programmatically created translatable content type returns SQL error on content creation": "https://www.drupal.org/files/issues/2018-10-06/2599228-74.patch",
         "#2679775 - Fixes float issue with inline label fields (entity references on most cases).": "https://www.drupal.org/files/issues/2018-03-30/2679775-19-clearfix_enclosing_label_and_contents.patch",
         "#2727869 - Translatability clue applied to multi-valued fields": "https://www.drupal.org/files/issues/2018-03-11/multivalue_fields_translatability_clue_8.4.x_2727869-08.patch",
         "#2759397 - Patch EntityReferenceItemNormalizer to prevent recursion": "https://www.drupal.org/files/issues/2759397-1-entity_reference_recursion.patch",
+        "#2766369 - Add skip-process option to file_copy and download process plugins": "https://www.drupal.org/files/issues/2018-03-12/2766369-8.patch",
         "#2794481 - Allow end date to be optional": "https://www.drupal.org/files/issues/2018-05-14/2794481-60.patch",
         "#2819561 - Managed file form element duplicated id attribute": "https://www.drupal.org/files/issues/managed-file-duplicate-id-2819561-7.patch",
         "#2869592 - Disabled update module shouldn't produce a status report warning": "https://www.drupal.org/files/issues/2869592-remove-update-warning-7.patch",
         "#2885441 - EntityReferenceAutocompleteWidget should define its size setting as an integer": "https://www.drupal.org/files/issues/2885441-12.patch",
         "#2902069 - Allow Url alias for private file uploads": "https://www.drupal.org/files/issues/2902069-9-allow_url_alias_on_private_files.patch",
-        "#2935932 - Add a FieldDefinition class for defining bundle fields in code.": "https://www.drupal.org/files/issues/2018-07-24/2935932-93-post-2280639.patch",
         "#2910031 - Improved varchar / string generation": "https://www.drupal.org/files/issues/2018-07-21/2910031-16-phrase-gen-with-test.patch",
-        "#2766369 - Add skip-process option to file_copy and download process plugins": "https://www.drupal.org/files/issues/2018-03-12/2766369-8.patch",
-        "#2413191 - Shipping a profile with multiple languages without locale module not possible": "https://www.drupal.org/files/issues/drupal-2413191-21.patch"
+        "#2935932 - Add a FieldDefinition class for defining bundle fields in code.": "https://www.drupal.org/files/issues/2018-07-24/2935932-93-post-2280639.patch"
       },
       "drupal/real_aes": {
         "#2727845 - Update module to use Defuse PHP Encryption 2.0": "https://www.drupal.org/files/issues/d8_update_module_to-2727845-15-do-not-test.patch"
@@ -199,28 +199,28 @@
         "2877751 - Inform users how many items they can add to a field that uses an entity browser": "https://www.drupal.org/files/issues/2877751-17.patch"
       },
       "drupal/page_manager": {
-        "#2876880 - page_variant entity type does not exist when installing or enabling": "https://www.drupal.org/files/issues/2876880-page-varient-cache-2.patch",
-        "#2873884 - Use flexbox to improve the Page Information interface": "https://www.drupal.org/files/issues/page_manager-use_flexbox_to_improve_page_information_ui-2873884-1.patch",
         "#2626090 - Page title block placed on block page renders empty": "https://www.drupal.org/files/issues/page-manager-2626090-page-title-empty-5.patch",
-        "#2909040 - Improve page_manager url handling": "https://www.drupal.org/files/issues/2909040-2.patch",
-        "#2799885 - Warning: Missing argument 1 for page_manager_ui at PageVariantContextsForm::getContextClass()": "https://www.drupal.org/files/issues/2018-04-14/2799885-11.patch"
+        "#2799885 - Warning: Missing argument 1 for page_manager_ui at PageVariantContextsForm::getContextClass()": "https://www.drupal.org/files/issues/2018-04-14/2799885-11.patch",
+        "#2873884 - Use flexbox to improve the Page Information interface": "https://www.drupal.org/files/issues/page_manager-use_flexbox_to_improve_page_information_ui-2873884-1.patch",
+        "#2876880 - page_variant entity type does not exist when installing or enabling": "https://www.drupal.org/files/issues/2876880-page-varient-cache-2.patch",
+        "#2909040 - Improve page_manager url handling": "https://www.drupal.org/files/issues/2909040-2.patch"
       },
       "drupal/panels": {
-        "2878684 - Use String.match to correlate regions when switching Layouts in Panels IPE": "https://www.drupal.org/files/issues/panels-ipe-2878684-3.patch",
-        "2825034 - Form error messages do not appear in IPE": "https://www.drupal.org/files/issues/2825034-6.patch"
+        "2825034 - Form error messages do not appear in IPE": "https://www.drupal.org/files/issues/2825034-6.patch",
+        "2878684 - Use String.match to correlate regions when switching Layouts in Panels IPE": "https://www.drupal.org/files/issues/panels-ipe-2878684-3.patch"
       },
       "drupal/devel": {
-        "#2935280 - Deprecated constant REQUEST_TIME": "https://www.drupal.org/files/issues/deprecated_constant-2935280-4.patch",
-        "#2644022 - DevelGenerateBase::populateFields() does not support base fields": "https://www.drupal.org/files/issues/2018-06-28/2644022-17-post2935280.patch"
+        "#2644022 - DevelGenerateBase::populateFields() does not support base fields": "https://www.drupal.org/files/issues/2018-06-28/2644022-17-post2935280.patch",
+        "#2935280 - Deprecated constant REQUEST_TIME": "https://www.drupal.org/files/issues/deprecated_constant-2935280-4.patch"
       },
       "drupal/language_hierarchy": {
         "#2830291 - D8 URL alias language fallbacks": "https://www.drupal.org/files/issues/language_hierarchy-2830291-url-alias-fallback_0.patch",
         "#2825851 - Limit Views results to the 'most-relevant' translation for the current site language + fallback hierarchy": "https://www.drupal.org/files/issues/language_hierarchy-limit_views_results-2825851-14.patch"
       },
       "drupal/field_group": {
-        "#2978747 - Hide group if all fields are hidden": "https://www.drupal.org/files/issues/2018-06-11/hide-show-field-group-2978747-4.patch",
+        "#2904585 - Create field_group.api.php for D8 version": "https://www.drupal.org/files/issues/2904585-2-field_group-api-php.patch",
         "#2969470 - Change URL using anchors when opening a tab": "https://www.drupal.org/files/issues/2018-06-07/horizontal-tabs-change-url-hash-2969470-5.patch",
-        "#2904585 - Create field_group.api.php for D8 version": "https://www.drupal.org/files/issues/2904585-2-field_group-api-php.patch"
+        "#2978747 - Hide group if all fields are hidden": "https://www.drupal.org/files/issues/2018-06-11/hide-show-field-group-2978747-4.patch"
       },
       "drupal/entity_reference_revisions": {
         "#2568187 - Support devel_generate, fatal error": "https://www.drupal.org/files/issues/2568187-use-upstream-generate.patch"
